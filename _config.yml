@@ -1,1 +1,27 @@
-theme: jekyll-theme-leap-day
+remote_theme: daattali/beautiful-jekyll@5.0.0
+
+# --- Required options --- #
+
+title: Joshua Potter
+
+# --- Footer social media links --- #
+
+social-network-links:
+  github: jrpotter
+
+# --- General options --- #
+
+url-pretty: "jrpotter.github.io"
+
+excerpt_length: 50
+
+feed_show_excerpt: true
+
+feed_show_tags: true
+
+post_search: true
+
+# --- Misc --- #
+
+# Ruby Date Format to show dates of posts
+date_format: "%B %-d, %Y"
