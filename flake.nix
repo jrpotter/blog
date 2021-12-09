@@ -17,15 +17,14 @@
         with import nixpkgs { system = "x86_64-linux"; };
         stdenv.mkDerivation {
           name = "jekyll";
-          src = self;
+          dontUnpack = true;
           buildInputs = [ gems ];
           installPhase = ''
-            mkdir -p $out/{bin,share/jekyll}
-            cp -r * $out/share/jekyll
+            mkdir -p $out/bin
             bin=$out/bin/jekyll
             cat > $bin <<EOF
 #!/bin/sh -e
-exec ${gems}/bin/jekyll serve --watch
+${gems}/bin/jekyll serve --watch
 EOF
             chmod +x $bin
           '';
@@ -34,7 +33,7 @@ EOF
       devShell.x86_64-linux = pkgs.mkShell {
         buildInputs = [
           pkgs.bundix
-          pkgs.ruby.devEnv
+          pkgs.bundler
           self.packages.x86_64-linux.jekyll
         ];
       };

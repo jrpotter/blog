@@ -21,6 +21,9 @@ $ direnv allow  # one time only
 $ jekyll
 ```
 
+If making changes to the `Gemfile`, make sure to run `bundix -l` to update the
+`gemset.nix` file.
+
 ## Notes
 
 We can remove the `.bundle/config` file once this
