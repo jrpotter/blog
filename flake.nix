@@ -10,7 +10,7 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        ruby = pkgs.ruby;
+        ruby = pkgs.ruby_2_7;
         gems = pkgs.bundlerEnv {
           name = "pages-env";
           inherit ruby;
