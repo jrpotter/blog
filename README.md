@@ -22,7 +22,8 @@ $ jekyll
 ```
 
 If making changes to the `Gemfile`, make sure to run `bundix -l` to update the
-`gemset.nix` file.
+`gemset.nix` file. For reasons I'm not sure about yet, you may also need to run
+`nix-collect-garbage` once beforehand.
 
 ## Notes
 

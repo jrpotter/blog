@@ -2,6 +2,11 @@
 
 source "https://rubygems.org"
 
-git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
+gem "jekyll-theme-chirpy", "~> 4.3", ">= 4.3.4"
 
-gem 'github-pages', group: :jekyll_plugins
+group :test do
+  gem "html-proofer", "~> 3.18"
+end
+
+# Jekyll <= 4.2.0 compatibility with Ruby 3.0
+gem "webrick", "~> 1.7"

@@ -1,27 +1,40 @@
-remote_theme: daattali/beautiful-jekyll@5.0.0
+theme: jekyll-theme-chirpy
 
-# --- Required options --- #
+baseurl: '/jrpotter.github.io'
+
+timezone: America/New_York
 
 title: Joshua Potter
 
-# --- Footer social media links --- #
+tagline: A temporary tagline
 
-social-network-links:
-  github: jrpotter
+description: >-
+  A temporary description.
 
-# --- General options --- #
+github:
+  username: jrpotter
 
-url-pretty: "jrpotter.github.io"
+social:
+  name: Joshua Potter
+  links:
+    - https://github.com/jrpotter
 
-excerpt_length: 50
+avatar: https://avatars.githubusercontent.com/u/3267697?v=4
 
-feed_show_excerpt: true
+toc: true
 
-feed_show_tags: true
+disqus:
+  comments: false
 
-post_search: true
+paginate: 20
 
-# --- Misc --- #
-
-# Ruby Date Format to show dates of posts
-date_format: "%B %-d, %Y"
+# Replace ruby-rogue with PrismJS.
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    disable : true
+site-css:
+  - /assets/css/prism.css
+  - /assets/css/site.css
+site-js:
+  - /assets/js/prism.js
