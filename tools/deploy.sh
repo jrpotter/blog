@@ -41,17 +41,13 @@ init() {
     echo "Type option '-h' to see the help information."
     exit -1
   fi
-
   _baseurl="$(grep '^baseurl:' _config.yml | sed "s/.*: *//;s/['\"]//g;s/#.*//")"
 }
 
 build() {
-  # clean up
   if [[ -d $SITE_DIR ]]; then
     rm -rf "$SITE_DIR"
   fi
-
-  # build
   JEKYLL_ENV=production bundle exec jekyll b -d "$SITE_DIR$_baseurl" --config "$_config"
 }
 
@@ -77,6 +73,7 @@ setup_gh() {
     _no_pages_branch=true
     git checkout -b "$PAGES_BRANCH"
   else
+    git reset --hard
     git checkout "$PAGES_BRANCH"
   fi
 }
@@ -85,8 +82,8 @@ backup() {
   mv "$SITE_DIR"/* "$_backup_dir"
   mv .git "$_backup_dir"
 
-  # When adding custom domain from Github website,
-  # the CANME only exist on `gh-pages` branch
+  # When adding custom domain from Github website, the CNAME only exist on
+  # `gh-pages` branch
   if [[ -f CNAME ]]; then
     mv CNAME "$_backup_dir"
   fi
