@@ -4,8 +4,6 @@
 
 theme: jekyll-theme-chirpy
 
-baseurl: '/jrpotter.github.io'
-
 lang: en
 
 timezone: America/New_York
