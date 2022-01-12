@@ -18,3 +18,46 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
 #post-list .post-preview .post-content > p {
   -webkit-line-clamp: 4;
 }
+
+#project-list {
+  padding-right: 0;
+  margin-top: 1.5rem;
+
+  .project {
+    padding-top: 1.4rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--main-border-color);
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    margin: 0;
+  }
+
+  .project-content {
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+    color: var(--post-list-text-color);
+    font-size: 1.08rem;
+    line-height: 1.8;
+    word-wrap: break-word;
+  }
+
+  .project-meta {
+    font-size: 0.85rem;
+    word-spacing: 1px;
+    display: flex;
+
+    .mr-auto {
+      margin-right: auto;
+    }
+
+    span:not(:last-child) {
+      margin-right: 1.2rem;
+    }
+
+    a {
+      color: #6c757d;
+    }
+  }
+}

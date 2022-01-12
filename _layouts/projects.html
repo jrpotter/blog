@@ -1,0 +1,36 @@
+---
+layout: page
+---
+
+{% include lang.html %}
+
+<div id="project-list">
+
+{% for project in site.projects %}
+
+  <div class="project post-preview">
+    <h1>
+      <a href="{{ project.url }}">{{ project.title }}</a>
+    </h1>
+    <div class="project-content">
+      <p>{{ project.description }}</p>
+    </div>
+    <div class="project-meta">
+      <div class="mr-auto">
+        <span>
+          <i class="fab fa-github"></i>
+          <a href="{{ project.url }}">View on Github</a>
+        </span>
+        <span>
+          <i class="far fa-window-restore"></i>
+          <a href="{{ project.url }}/releases/tag/{{ project.version }}">
+            {{ project.version }}
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+{% endfor %}
+
+</div> <!-- #project-list -->
