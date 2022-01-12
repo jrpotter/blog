@@ -1,0 +1,50 @@
+---
+layout: page
+# The Archives of posts.
+---
+
+{% include lang.html %}
+
+{% assign entries = site.posts | concat: site.projects | sort: "date" | reverse %}
+{% assign entries_last_index = entries | size | minus: 1 %}
+
+<div id="archives" class="pl-xl-2">
+
+{% for i in (0..entries_last_index) %}
+  {% assign entry = entries[i] %}
+  {% capture this_year %}{{ entry.date | date: "%Y" }}{% endcapture %}
+  {% assign j = i | plus: 1 %}
+  {% capture pre_year %}{{ entries[j].date | date: "%Y" }}{% endcapture %}
+
+  {% if forloop.first %}
+    {% assign last_day = "" %}
+    {% assign last_month = "" %}
+  <span class="lead">{{ this_year }}</span>
+  <ul class="list-unstyled">
+  {% endif %}
+    <li>
+      <div>
+        {% capture this_day %}{{ entry.date | date: "%d" }}{% endcapture %}
+        {% capture _mth_df %}{{ site.data.locales[lang].date_format.post.archive_month }}{% endcapture %}
+        {% capture this_month %}{{ entry.date | date: _mth_df }}{% endcapture %}
+        <span class="date day">{{ this_day }}</span>
+        <span class="date month small text-muted">{% include no-zero-date.html date_str=this_month %}</span>
+        {% if entry.version %}
+        <a href="/projects/">[Project] {{ entry.title }}</a>
+        {% else %}
+        <a href="{{ entry.url | relative_url }}">{{ entry.title }}</a>
+        {% endif %}
+      </div>
+    </li>
+  {% if forloop.last %}
+  </ul>
+  {% elsif this_year != pre_year %}
+  </ul>
+  <span class="lead">{{ pre_year }}</span>
+  <ul class="list-unstyled">
+    {% assign last_day = "" %}
+    {% assign last_month = "" %}
+  {% endif %}
+{% endfor %}
+
+</div>

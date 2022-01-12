@@ -5,7 +5,7 @@ layout: page
 
 {% include lang.html %}
 
-{% assign pinned = site.posts | where: "pin", "true" %}
+{% assign pinned = site.posts | where: "item", "pin" %}
 {% assign default = site.posts | where_exp: "item", "item.pin != true" %}
 
 {% assign posts = "" | split: "" %}
@@ -22,7 +22,6 @@ layout: page
 {% else %}
   {% assign pinned_num = 0 %}
 {% endif %}
-
 
 <!-- Get default posts -->
 

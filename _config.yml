@@ -36,8 +36,9 @@ social:
 
 projects:
   -
-   title: Homesync
    url: https://github.com/jrpotter/homesync
+   title: Homesync
+   date: "2022-01-12"
    version: v0.1.0-alpha
    description: |
      Homesync provides a way of automatically syncing files across your
