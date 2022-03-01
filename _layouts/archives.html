@@ -29,10 +29,10 @@ layout: page
         {% capture this_month %}{{ entry.date | date: _mth_df }}{% endcapture %}
         <span class="date day">{{ this_day }}</span>
         <span class="date month small text-muted">{% include no-zero-date.html date_str=this_month %}</span>
-        {% if entry.version %}
+        {% if entry.project %}
         <a href="/projects/">[Project] {{ entry.title }}</a>
         {% else %}
-        <a href="{{ entry.url | relative_url }}">{{ entry.title }}</a>
+        <a href="{{ entry.url | relative_url }}">[Post] {{ entry.title }}</a>
         {% endif %}
       </div>
     </li>

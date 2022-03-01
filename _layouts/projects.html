@@ -21,12 +21,14 @@ layout: page
           <i class="fab fa-github"></i>
           <a href="{{ project.url }}">View on Github</a>
         </span>
+        {% if project.version %}
         <span>
           <i class="far fa-window-restore"></i>
           <a href="{{ project.url }}/releases/tag/{{ project.version }}">
             {{ project.version }}
           </a>
         </span>
+        {% endif %}
       </div>
     </div>
   </div>

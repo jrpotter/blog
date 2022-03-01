@@ -36,17 +36,27 @@ social:
 
 projects:
   -
-   url: https://github.com/jrpotter/homesync
-   title: Homesync
-   date: "2022-01-12"
-   version: v0.1.0-alpha
-   description: |
-     Homesync provides a way of automatically syncing files across your
-     desktop to a <code>git</code> repository. By registering files with
-     homesync, upstream and downstream syncing can be done as requested,
-     without any manual need to twiddle files and copy them into a local
-     git repository. Separately, a daemon service exists that watches for
-     changes as they happen.
+    project: true
+    url: https://github.com/jrpotter/flake-templates
+    title: Flake Templates
+    date: "2022-03-01"
+    description: |
+      A collection of opinionated flake templates serving as minimal scaffolding
+      for different projects. These prove especially useful when looking to
+      create a temporary sandbox for experimentation.
+  -
+    project: true
+    url: https://github.com/jrpotter/homesync
+    title: Homesync
+    date: "2022-01-12"
+    version: v0.1.0-alpha
+    description: |
+      Homesync provides a way of automatically syncing files across your
+      desktop to a <code>git</code> repository. By registering files with
+      homesync, upstream and downstream syncing can be done as requested,
+      without any manual need to twiddle files and copy them into a local
+      git repository. Separately, a daemon service exists that watches for
+      changes as they happen.
 
 # ========================================
 # Other
