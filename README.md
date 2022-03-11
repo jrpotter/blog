@@ -7,7 +7,7 @@ this project locally using:
 
 ```bash
 $ nix develop
-$ jekyll
+$ jekyll serve --watch
 ...
 $ exit
 ```
@@ -18,7 +18,7 @@ Alternatively, if you have [direnv](https://direnv.net/) installed and nix
 ```bash
 $ direnv allow  # one time only
 ...
-$ jekyll
+$ jekyll serve --watch
 ```
 
 If making changes to the `Gemfile`, make sure to run `bundix -l` to update the
