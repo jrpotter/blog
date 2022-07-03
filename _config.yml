@@ -37,6 +37,14 @@ social:
 projects:
   -
     project: true
+    url: https://github.com/jrpotter/anki-synonyms
+    title: Anki Synonyms
+    date: "2022-07-03"
+    description: |
+      A small Anki plugin allowing users to specify synonyms within question
+      and answer prompts of their flashcards.
+  -
+    project: true
     url: https://github.com/jrpotter/flake-templates
     title: Flake Templates
     date: "2022-03-01"
