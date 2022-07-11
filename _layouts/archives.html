@@ -5,6 +5,11 @@ layout: page
 
 {% include lang.html %}
 
+{% assign project_paths = "" | split: ',' %}
+{% for project in site.projects %}
+  {% assign project_paths = project_paths | push: project.path %}
+{% endfor %}
+
 {% assign entries = site.posts | concat: site.projects | sort: "date" | reverse %}
 {% assign entries_last_index = entries | size | minus: 1 %}
 
@@ -29,8 +34,8 @@ layout: page
         {% capture this_month %}{{ entry.date | date: _mth_df }}{% endcapture %}
         <span class="date day">{{ this_day }}</span>
         <span class="date month small text-muted">{% include no-zero-date.html date_str=this_month %}</span>
-        {% if entry.project %}
-        <a href="/projects/">[Project] {{ entry.title }}</a>
+        {% if project_paths contains entry.path %}
+        <a target="_blank" href="{{ entry.source }}">[Project] {{ entry.title }}</a>
         {% else %}
         <a href="{{ entry.url | relative_url }}">[Post] {{ entry.title }}</a>
         {% endif %}

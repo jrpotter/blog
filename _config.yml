@@ -31,42 +31,6 @@ social:
     - https://github.com/jrpotter
 
 # ========================================
-# Projects
-# ========================================
-
-projects:
-  -
-    project: true
-    url: https://github.com/jrpotter/anki-synonyms
-    title: Anki Synonyms
-    date: "2022-07-03"
-    description: |
-      A small Anki plugin allowing users to specify synonyms within question
-      and answer prompts of their flashcards.
-  -
-    project: true
-    url: https://github.com/jrpotter/flake-templates
-    title: Flake Templates
-    date: "2022-03-01"
-    description: |
-      A collection of opinionated flake templates serving as minimal scaffolding
-      for different projects. These prove especially useful when looking to
-      create a temporary sandbox for experimentation.
-  -
-    project: true
-    url: https://github.com/jrpotter/homesync
-    title: Homesync
-    date: "2022-01-12"
-    version: v0.1.0-alpha
-    description: |
-      Homesync provides a way of automatically syncing files across your
-      desktop to a <code>git</code> repository. By registering files with
-      homesync, upstream and downstream syncing can be done as requested,
-      without any manual need to twiddle files and copy them into a local
-      git repository. Separately, a daemon service exists that watches for
-      changes as they happen.
-
-# ========================================
 # Other
 # ========================================
 
@@ -84,12 +48,16 @@ collections:
   tabs:
     output: true
     sort_by: order
+  projects:
+    order:
+      - 2022-07-03-anki-synonyms.md
+      - 2022-03-01-flake-templates.md
+      - 2022-01-12-homesync.md
 
 defaults:
   -
     scope:
-      # An empty string here means all files in the project
-      path: ''
+      path: ''  # An empty string here means all files in the project
       type: posts
     values:
       layout: post
