@@ -1,31 +1,22 @@
 # jrpotter.github.io
 
-## Quickstart
-
-Personal Github Pages repository. The project is managed using nix. You can run
-this project locally using:
-
-```bash
-$ nix develop
-$ jekyll serve --watch
-...
-$ exit
-```
-
-Alternatively, if you have [direnv](https://direnv.net/) installed and nix
-[flakes](https://nixos.wiki/wiki/Flakes) enabled, you can run:
+This is my personal blog, powered by [Jekyll](https://jekyllrb.com/) with the
+[Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) theme. To run, first
+install [rvm](https://rvm.io/rvm/install) and confirm the installation was
+successful:
 
 ```bash
-$ direnv allow  # one time only
-...
-$ jekyll serve --watch
+> curl -sSL https://get.rvm.io | bash
+> type rvm | head -1
+rvm is a function
 ```
 
-If making changes to the `Gemfile`, make sure to run `bundix -l` to update the
-`gemset.nix` file. For reasons I'm not sure about yet, you may also need to run
-`nix-collect-garbage` once beforehand.
+Afterward, run the following:
 
-## Notes
-
-We can remove the `.bundle/config` file once this
-[bundix PR](https://github.com/nix-community/bundix/pull/68) is merged.
+```bash
+> rvm install 3.2.2
+> rvm use 3.2.2
+> bundle install
+> gem install jekyll
+> jekyll serve --watch
+```
