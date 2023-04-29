@@ -22,9 +22,9 @@ As such, we'll discuss choice parts of this paper as well.
 
 Code snippets can be found in [this git repository](https://github.com/jrpotter/effect-systems).
 
-{% include toc.html %}
+{% include inline-toc.html %}
 
-# Free Monads
+## Free Monads
 
 To begin our exploration, let's pose a few questions:
 
@@ -81,7 +81,7 @@ effectively separated the **syntax** of our original function from its
 itself, and the `runNonEmptyList` **handler** can be viewed as the
 interpretation of said program.
 
-## Making a Monad
+### Making a Monad
 
 `NonEmptyList` was formulated from a monad, so it's natural to think perhaps it
 too is a monad. Unfortunately this is not the case - it isn't even a functor!
@@ -203,7 +203,7 @@ instance (Functor f) => Monad (NonEmptyList'' f) where
   Cons'' f >>= g = Cons'' (fmap (>>= g) f)
 ```
 
-## Making an Applicative
+### Making an Applicative
 
 The `NonEmptyList''` variant actually has another well known name within the
 community:
@@ -260,7 +260,7 @@ instance (Functor f) => Applicative (Free f) where
   Free f <*> g = Free (fmap (<*> g) f)
 ```
 
-## Algebraic Data Types
+### Algebraic Data Types
 
 Let's revisit our original questions:
 
@@ -306,7 +306,7 @@ runReadThenWrite (Free (Read f)) = runReadThenWrite f
 runReadThenWrite (Pure _) = pure ()
 ```
 
-# Composing Effects
+## Composing Effects
 
 Though neither impressive nor particularly flexible, `readThenWrite` is an
 example of a DSL corresponding to our `Teletype` **effect**. This is only half
@@ -353,7 +353,7 @@ some new effect is a maintenance burden we should not settle on shouldering.
 Instead, we should aim to write all of our programs in a way that doesn't
 require modifying source.
 
-## Sum Types
+### Sum Types
 
 Let's consider what it would take to compose effects `State Int` and
 `State String` together. In the world of data types, we usually employ either
@@ -438,7 +438,7 @@ threadedState' = ...
 -- (1,("a",()))
 ```
 
-## Membership
+### Membership
 
 We can do better still. Our programs are far too concerned with the ordering of
 their corresponding signatures. The only thing they should care about is whether
@@ -574,7 +574,7 @@ threadedStateM'' = do
   pure ()
 ```
 
-# Higher-Order Effects
+## Higher-Order Effects
 
 This composition provides many benefits, but in certain situations we end up
 hitting a wall. To continue forward, we borrow an example from
@@ -633,7 +633,7 @@ countDown = do
 This program calls a potentially dangerous `decr` function three times, with the
 last two attempts wrapped around a `catch`.
 
-## Scoping Problems
+### Scoping Problems
 
 How should the state of `countDown` be interpreted? There exist two reasonable
 options:
@@ -691,7 +691,7 @@ countDown' =
 It's noisy, but in the above snippet we see there exists no mechanism that
 "saves" the state prior to running the nested program.
 
-## A Stronger Free
+### A Stronger Free
 
 Somehow we need to ensure a nested (e.g. the program scoped within `catch`) does
 not "leak" in any way. To support programs within programs (within programs
@@ -1019,7 +1019,7 @@ eventually encounter `decr {- 3 -}` which returns `throw ()` instead of
 sees the `Catch`, encounters the returned `Throw` after running the scoped
 program, and invokes the error handler which has our saved state.
 
-# Limitations
+## Limitations
 
 Though the higher-order free implementation is largely a useful tool for
 managing effects, it is not perfect. I've had an especially hard time getting
@@ -1052,7 +1052,7 @@ to achieve the desired global vs. local state semantics. This is not exclusively
 a problem of free effect systems (e.g. MTL also suffers from this), but the
 issue feels more prominent here.
 
-# Conclusion
+## Conclusion
 
 I will continue exploring effect systems à la free, but I am admittedly not
 yet convinced they are the right way forward. Unfortunately, they can be hard to

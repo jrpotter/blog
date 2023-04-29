@@ -15,8 +15,18 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
   padding-top: 20px;
 }
 
-#post-list .post-preview .post-content > p {
-  -webkit-line-clamp: 4;
+#post-list .post-preview {
+  border: none;
+  background: transparent;
+
+  &:hover {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .post-content > p {
+    -webkit-line-clamp: 4;
+  }
 }
 
 #project-list {

@@ -88,6 +88,9 @@ compress_html:
   ignore:
     envs: [development]
 
+# boolean type, the global switch for TOC in posts.
+toc: true
+
 # Values determined with `https://giscus.app/`.
 comments:
   active: giscus

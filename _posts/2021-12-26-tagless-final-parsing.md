@@ -12,48 +12,13 @@ and code written on the topic. We conclude with an implementation of an
 interpreter for a toy language that runs quickly, remains strongly-typed, and
 can be extended without modification.
 
-{% include toc.html %}
+{% include inline-toc.html %}
 
-# Introduction
+## Introduction
 
 To get started, let's write what our toy language will look like.
 
-<!-- Need to write this custom since rouge does not support EBNF. -->
-<div class="language-ebnf highlighter-rouge">
-  <div class="code-header">
-    <span text-data="EBNF"><i class="fa-fw fas fa-code small"></i></span>
-    <button
-      aria-label="copy"
-      title-succeed="Copied!"
-      data-original-title=""
-      title=""
-    >
-      <i class="far fa-clipboard"></i>
-    </button>
-  </div>
-  <div class="highlight">
-    <code>
-      <table class="rouge-table">
-        <tbody>
-          <tr>
-            <td class="rouge-gutter gl">
-              <pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-</pre>
-            </td>
-            <td class="rouge-code"><pre>
+```text
 digit = ? any number between 0-9 ? ;
 
 (* We ignore any leading 0s *)
@@ -68,14 +33,7 @@ e_boolean = [ e_boolean, ("&&" | "||") ]
           ;
 
 expr = e_integer | e_boolean ;
-</pre>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </code>
-  </div>
-</div>
+```
 
 The above expresses addition, subtraction, conjunction, and disjunction, to be
 interpreted in the standard way. All operations are left-associative, with
@@ -107,7 +65,7 @@ will hopefully be more representative of projects out in the wild.
 
 " %}
 
-# Initial Encoding
+## Initial Encoding
 
 How might we instinctively choose to tackle an interpreter of our language? As
 one might expect, megaparsec already has all the tooling needed to parse
@@ -222,7 +180,7 @@ This solution
 
 Let's tackle each of these problems in turn.
 
-## Single Pass
+### Single Pass
 
 Our naive attempt separated parsing from evaluation because they fail in
 different ways. The former raises a `ParseErrorBundle` on invalid input while
@@ -267,7 +225,7 @@ parseSingle = expr >>= either (fail . unpack) pure
          Right . RBool <$> boolean
 ```
 
-## Resource Usage
+### Resource Usage
 
 Though our above strategy avoids two *explicit* passes through the AST, laziness
 sets it up so that we build this intertwined callstack without actually
@@ -388,7 +346,7 @@ readTextDevice Data.Text.Internal.IO      libraries/text/src/Data/Text/Internal/
 Surprisingly, the vast majority of time (roughly 95%) is spent parsing. As such,
 we won't worry ourselves about runtime any further.
 
-## Type Safety
+### Type Safety
 
 Let's next explore how we can empower library users with a stricter version of
 the `Expr` monotype. In particular, we want to prohibit construction of invalid
@@ -444,7 +402,7 @@ Users of the parser can now unwrap the `Wrapper` type and resume like normal.
 *convenience* takes a dramatic hit. It is awkward working with the `Wrapper`
 type." %}
 
-## Expression Problem
+### Expression Problem
 
 Lastly comes the expression problem, and one that is fundamentally unsolvable
 given our current implementation. By nature of (G)ADTs, all data-types are
@@ -452,7 +410,7 @@ given our current implementation. By nature of (G)ADTs, all data-types are
 around e.g. pattern matching. To fix this (and other problems still present in
 our implementation), we contrast our initial encoding to that of tagless final.
 
-# Tagless Final
+## Tagless Final
 
 Let's re-think our GADT example above and refactor it into a typeclass:
 
@@ -498,7 +456,7 @@ parallels the memory usage [of above](#resource-usage) as well as a proper
 solution to the expression problem. To follow along though first requires a
 quick detour into **leibniz equalities**.
 
-## Leibniz Equality
+### Leibniz Equality
 
 Leibniz equality states that two objects are equivalent provided they can be
 substituted in all contexts without issue. Consider the definition provided by
@@ -591,7 +549,7 @@ functionEquality
   </div>
 </details>
 
-## Dynamics
+### Dynamics
 
 Within our GADTs example, we introduced data type `Wrapper` to allow us to pass
 around GADTs of internally different type (e.g. `GExpr Integer` vs.
@@ -727,7 +685,7 @@ parseStrict = term >>= expr
       toDyn <$> integer <|> toDyn <$> boolean
 ```
 
-## Interpretations
+### Interpretations
 
 So far we've seen very little benefit switching to this strategy despite the
 level of complexity this change introduces. Here we'll pose a question that
@@ -782,7 +740,7 @@ parseStrict :: forall repr. Symantics repr => Parser (Dynamic repr)
 `Parser` as a `Dynamic PPrint` instead of a `Dynamic Eval` without losing any
 previously acquired gains.
 
-## Expression Revisited
+### Expression Revisited
 
 There does exist a major caveat with our tagless final interpreters. If owning a
 single `Dynamic` instance, how exactly are we able to interpret this in multiple
@@ -851,7 +809,7 @@ newtype MSQ a = MSQ {runMSQ :: forall repr. MulSymantics repr => repr a}
 just to keep up. This in turn forces us to redefine all functions that operated
 on `SQ`.
 
-### Copy Symantics
+#### Copy Symantics
 
 We can reformulate this more openly, abandoning any sort of `Rank2` constructors
 within our `newtype`s by choosing to track multiple representations
@@ -911,7 +869,7 @@ Notice each function places a `Dynamic repr` of unknown representation in the
 last position of each return tuple. The caller is then able to interpret this
 extra `repr` as they wish, composing them in arbitrary ways (e.g. `runBoth'`).
 
-# Limitations
+## Limitations
 
 The expression problem is only partially solved with our `Dynamic` strategy. If
 for instance we wanted to add a new literal type, e.g. a `String`, we would
@@ -920,7 +878,7 @@ support them. The standard `dynamics` package only allows monomorphic
 values so in this sense we are stuck. If only needing to add additional
 functionality to the existing set of types though, we can extend at will.
 
-# Conclusion
+## Conclusion
 
 I was initially hoping to extend this post further with a discussion around
 explicit sharing as noted [here](https://arxiv.org/pdf/1109.0784.pdf), but this
