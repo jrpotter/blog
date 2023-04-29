@@ -14,8 +14,8 @@ rvm is a function
 Afterward, run the following:
 
 ```bash
-> rvm install 3.2.2
-> rvm use 3.2.2
+> rvm install 2.7.8
+> rvm use 2.7.8
 > bundle install
 > gem install jekyll
 > jekyll serve --watch
