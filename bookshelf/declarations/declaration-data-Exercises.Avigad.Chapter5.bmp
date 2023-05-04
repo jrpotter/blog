@@ -1,0 +1,1 @@
+{"name":"Exercises.Avigad.Chapter5","instances":[],"imports":["Init"],"declarations":[{"sourceLink":"https://github.com/jrpotter/bookshelf/blob/ad9684f53ec2eee7371f39e8d2f632806ee4e941/Exercises/Avigad/Chapter5.lean#L413-L423","name":"ex1.forall_negation","kind":"theorem","docLink":"./Exercises/Avigad/Chapter5.html#ex1.forall_negation","doc":""}]}

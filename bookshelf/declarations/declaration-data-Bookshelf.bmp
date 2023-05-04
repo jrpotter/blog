@@ -1,1 +1,1 @@
-{"name":"Bookshelf","instances":[],"imports":["Init","Bookshelf.List","Bookshelf.Real"],"declarations":[]}
+{"name":"Bookshelf","instances":[],"imports":["Init","Bookshelf.Combinator","Bookshelf.List","Bookshelf.Real"],"declarations":[]}

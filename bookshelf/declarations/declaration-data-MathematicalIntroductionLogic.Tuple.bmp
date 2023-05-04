@@ -1,1 +1,0 @@
-{"name":"MathematicalIntroductionLogic.Tuple","instances":[],"imports":["Init","MathematicalIntroductionLogic.Tuple.Basic","MathematicalIntroductionLogic.Tuple.Generic"],"declarations":[]}
