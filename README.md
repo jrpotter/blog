@@ -1,7 +1,7 @@
 # jrpotter.github.io
 
 This is my personal blog, powered by [Jekyll](https://jekyllrb.com/) and themed
-with [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy) theme.
+with [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy).
 
 ## Quickstart
 
