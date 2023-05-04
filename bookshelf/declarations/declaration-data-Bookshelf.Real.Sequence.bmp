@@ -1,0 +1,1 @@
+{"name":"Bookshelf.Real.Sequence","instances":[],"imports":["Init","Bookshelf.Real.Sequence.Arithmetic","Bookshelf.Real.Sequence.Geometric"],"declarations":[]}

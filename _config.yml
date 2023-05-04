@@ -48,7 +48,6 @@ collections:
   projects:
   tabs:
     output: true
-    sort_by: order
 
 defaults:
   - scope:

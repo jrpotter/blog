@@ -1,0 +1,1 @@
+{"name":"OneVariableCalculus.Real","instances":[],"imports":["Init","OneVariableCalculus.Real.Function","OneVariableCalculus.Real.Geometry","OneVariableCalculus.Real.Set"],"declarations":[]}

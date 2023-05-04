@@ -11,6 +11,8 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Home
+  projects: Projects
+  bookshelf: Bookshelf
   categories: Categories
   tags: Tags
   archives: Archives
