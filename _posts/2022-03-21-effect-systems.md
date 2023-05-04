@@ -1,7 +1,7 @@
 ---
 title: Effect Systems
 categories: [Programming]
-tags: [haskell, functional, programming]
+tags: [haskell, category, effects, type]
 ---
 
 As I've begun exploring the world of so-called **algebraic effect systems**,

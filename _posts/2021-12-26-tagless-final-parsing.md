@@ -1,7 +1,7 @@
 ---
 title: Tagless Final Parsing
 categories: [Programming]
-tags: [haskell, functional, programming]
+tags: [haskell, parsing, type]
 ---
 
 In his [introductory text](https://okmij.org/ftp/tagless-final/course/lecture.pdf),

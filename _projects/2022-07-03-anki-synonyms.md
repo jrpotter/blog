@@ -1,6 +1,5 @@
 ---
 title: Anki Synonyms
-categories: [Programming]
 tags: [anki, python]
 source: https://github.com/jrpotter/anki-synonyms
 ---

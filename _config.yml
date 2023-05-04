@@ -45,14 +45,10 @@ kramdown:
       start_line: 1
 
 collections:
+  projects:
   tabs:
     output: true
     sort_by: order
-  projects:
-    order:
-      - 2022-07-03-anki-synonyms.md
-      - 2022-03-01-flake-templates.md
-      - 2022-01-12-homesync.md
 
 defaults:
   - scope:
