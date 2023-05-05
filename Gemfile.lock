@@ -103,6 +103,7 @@ PLATFORMS
 
 DEPENDENCIES
   html-proofer (~> 3.18)
+  jekyll-redirect-from (= 0.16.0)
   jekyll-theme-chirpy (= 5.6.1)
   webrick (= 1.8.1)
 
