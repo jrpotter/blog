@@ -34,5 +34,4 @@ To replace the current collection of static files comprising a version of
 > rm -r {bookshelf,_bookshelf/build/doc}
 > (cd _bookshelf && lake build Bookshelf:docs)
 > cp -r _bookshelf/build/doc bookshelf
-> rm -r bookshelf/LaTeX/preamble
 ```
