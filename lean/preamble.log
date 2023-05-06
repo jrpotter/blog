@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=latex 2023.5.3)  5 MAY 2023 13:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=latex 2023.5.3)  6 MAY 2023 13:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -7,8 +7,8 @@ de"##1"{\Link##1}\expandafter\HCode\else\expandafter\Link\fi}\def\Link#1.a.b.c.
 {\g@addto@macro\@documentclasshook{\RequirePackage[#1,html]{tex4ht}}\let\HCode\
 documentstyle\def\documentstyle{\let\documentstyle\HCode\expandafter\def\csname
  tex4ht\endcsname{#1,html}\def\HCode####1{\documentstyle[tex4ht,}\@ifnextchar[{
-\HCode}{\documentstyle[tex4ht]}}}\makeatother\HCode xhtml,,charset=utf-8,html5.
-a.b.c.\input "\detokenize{preamble.tex}"
+\HCode}{\documentstyle[tex4ht]}}}\makeatother\HCode xhtml,./build,charset=utf-8
+,html5.a.b.c.\input "\detokenize{./preamble.tex}"
 (./preamble.tex
 
 ! LaTeX Error: \usepackage before \documentclass.
@@ -29,8 +29,8 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.2 \usepackage{
-                hyperref}
+l.2 \usepackage[T1]{
+                    fontenc}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
@@ -42,7 +42,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.3 \usepackage{
-                underscore}
+                hyperref}
 \usepackage may only appear in the document preamble, i.e.,
 between \documentclass and \begin{document}.
 
@@ -98,19 +98,24 @@ Missing character: There is no b in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no u in font nullfont!
 Missing character: There is no e in font nullfont!
+
+Overfull \hbox (20.0pt too wide) in paragraph at lines 12--13
+[]
+ []
+
 )
 ! Emergency stop.
-<*> ...l5.a.b.c.\input "\detokenize{preamble.tex}"
+<*> ....a.b.c.\input "\detokenize{./preamble.tex}"
                                                   
 *** (job aborted, no legal \end found)
 
  
 Here is how much of TeX's memory you used:
- 34 strings out of 480807
- 602 string characters out of 5905178
+ 38 strings out of 480807
+ 645 string characters out of 5905178
  281488 words of memory out of 6000000
- 17514 multiletter control sequences out of 15000+600000
+ 17518 multiletter control sequences out of 15000+600000
  403430 words of font info for 27 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 11i,0n,14p,562b,16s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 11i,0n,14p,603b,16s stack positions out of 5000i,500n,10000p,200000b,80000s
 No pages of output.
