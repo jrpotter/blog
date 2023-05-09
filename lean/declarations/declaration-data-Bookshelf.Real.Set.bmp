@@ -1,1 +1,0 @@
-{"name":"Bookshelf.Real.Set","instances":[],"imports":["Init","Bookshelf.Real.Set.Basic","Bookshelf.Real.Set.Interval","Bookshelf.Real.Set.Partition"],"declarations":[]}

@@ -1,1 +1,0 @@
-{"name":"Bookshelf.Real","instances":[],"imports":["Init","Bookshelf.Real.Basic","Bookshelf.Real.Function","Bookshelf.Real.Geometry","Bookshelf.Real.Rational","Bookshelf.Real.Sequence","Bookshelf.Real.Set"],"declarations":[]}

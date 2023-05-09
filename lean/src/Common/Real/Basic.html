@@ -1,0 +1,34 @@
+<html lang="en" class="alectryon-standalone"><head><meta charset="UTF-8"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="../../.././src/alectryon.css"></link><link rel="stylesheet" href="../../.././src/pygments.css"></link><link rel="stylesheet" href="../../.././src/docutils_basic.css"></link><link rel="shortcut icon" href="../../.././favicon.ico"></link><script defer="true" src="../../.././src/alectryon.js"></script></head><body><article class="alectryon-root alectryon-centered"><div class="alectryon-banner">Built with <a href="https://github.com/leanprover/doc-gen4">doc-gen4</a>, running Lean4.
+      Bubbles (<span class="alectryon-bubble"></span>) indicate interactive fragments: hover for details, tap to reveal contents.
+      Use <kbd>Ctrl+↑</kbd><kbd>Ctrl+↓</kbd>to navigate, <kbd>Ctrl+🖱️</kbd>to focus.
+      On Mac, use <kbd>Cmd</kbd>instead of <kbd>Ctrl</kbd>.
+    </div><pre class="alectryon-io highlight"><span class="alectryon-wsp"><span class="alectryon-token">import Mathlib.Data.Real.Basic
+
+/-! # Common.Real.Basic
+
+A collection of basic notational conveniences.
+-/
+
+/--
+An abbreviation of `ℝ²` as the Cartesian product `ℝ × ℝ`.
+-/
+</span><span class="alectryon-token"><span class="k">notation</span></span><span class="alectryon-token"> "ℝ²" => ℝ × ℝ
+
+</span><span class="alectryon-token"><span class="k">namespace</span></span><span class="alectryon-token"> Real
+
+/--
+Definitionally, the area of a unit circle.
+
+###### PORT
+
+As of now, this remains an `axiom`, but it should be replaced by the definition
+in `Mathlib` once ported to Lean 4.
+-/
+</span><span class="alectryon-token"><span class="k">axiom</span></span><span class="alectryon-token"> </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>pi</var><b>: </b><span><a href="../../.././Mathlib/Data/Real/Basic.html#Real">ℝ</a></span></span></div></blockquote></div></small></div>pi</span><span class="alectryon-token"> : </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>ℝ</var><b>: </b><span><a href="../../.././foundational_types.html">Type</a></span></span></div></blockquote></div></small></div>ℝ</span><span class="alectryon-token">
+
+/--
+An abbreviation of `pi` as symbol `π`.
+-/
+</span><span class="alectryon-token"><span class="k">notation</span></span><span class="alectryon-token"> "π" => </span><span class="alectryon-token"><div class="alectryon-type-info-wrapper"><small class="alectryon-type-info"><div class="alectryon-goals"><blockquote class="alectryon-goal"><div class="goal-hyps"><span class="hyp-type"><var>pi</var><b>: </b><span><a href="../../.././Mathlib/Data/Real/Basic.html#Real">ℝ</a></span></span></div></blockquote></div></small></div>pi</span><span class="alectryon-token">
+
+</span><span class="alectryon-token"><span class="k">end</span></span><span class="alectryon-token"> Real</span></span></pre></article></body></html>
