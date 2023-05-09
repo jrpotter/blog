@@ -31,7 +31,5 @@ To replace the current collection of static files comprising a version of
 `bookshelf`, run the following:
 
 ```bash
-> rm -r {lean,_bookshelf/build/doc}
-> (cd _bookshelf && lake build Bookshelf:docs)
-> cp -r _bookshelf/build/doc lean
+make bookshelf
 ```
