@@ -1,1 +1,1 @@
-{"name":"Common.Real","instances":[],"imports":["Init","Common.Real.Basic","Common.Real.Function","Common.Real.Geometry","Common.Real.Rational","Common.Real.Sequence","Common.Real.Set"],"declarations":[]}
+{"name":"Common.Real","instances":[],"imports":["Init","Common.Real.Basic","Common.Real.Geometry","Common.Real.Rational","Common.Real.Sequence"],"declarations":[]}
