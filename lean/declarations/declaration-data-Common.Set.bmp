@@ -1,1 +1,1 @@
-{"name":"Common.Set","instances":[],"imports":["Init","Common.Set.Basic","Common.Set.Intervals"],"declarations":[]}
+{"name":"Common.Set","instances":[],"imports":["Init","Common.Set.Basic","Common.Set.Partition"],"declarations":[]}
