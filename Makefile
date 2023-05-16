@@ -3,6 +3,6 @@ all:
 
 bookshelf:
 	git -C _bookshelf pull
-	-rm -r {lean,_bookshelf/build/doc}
-	(cd _bookshelf && lake build Bookshelf:docs)
+	-rm -r lean
+	${MAKE} -C _bookshelf docs!
 	cp -r _bookshelf/build/doc lean
