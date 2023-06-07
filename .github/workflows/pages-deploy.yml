@@ -12,6 +12,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+defaults:
+  run:
+    shell: bash
+
 permissions:
   contents: read
   pages: write
@@ -30,8 +34,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
+          # Indicates all history for all branches and tags.
           fetch-depth: 0
-          submodules: true
+          # Recursively checkout submodules.
+          submodules: recursive
 
       - name: Setup Pages
         id: pages
