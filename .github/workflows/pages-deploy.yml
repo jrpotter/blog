@@ -44,7 +44,31 @@ jobs:
         uses: actions/configure-pages@v3
 
       - name: Setup LaTeX
-        run: sudo apt-get install -y texlive-latex-base
+        run: |
+          sudo apt-get install -y perl wget
+          cd /tmp
+          wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+          zcat < install-tl-unx.tar.gz | tar xf -
+          cd "$(find . -maxdepth 1 -type d -name 'install-tl-*')"
+          TEXLIVE_INSTALL_PREFIX="$HOME/.texlive" TEXLIVE_INSTALL_TEXDIR="$HOME/.texlive/2023" perl ./install-tl --no-interaction --scheme=scheme-basic
+          echo "$HOME/.texlive/2023/bin/x86_64-linux" >> $GITHUB_PATH
+
+      # Break out into separate command to access `$GITHUB_PATH`.
+      - name: Install Extra LaTeX Packages
+        run: |
+          tlmgr install \
+            bigfoot \
+            comment \
+            enumitem \
+            environ \
+            etoolbox \
+            fancybox \
+            fontawesome5 \
+            jknapltx \
+            ncctools \
+            rsfs \
+            soul \
+            xcolor
 
       - name: Setup Lean
         run: |
