@@ -1,1 +1,0 @@
-{"name":"Common.Real.Sequence","instances":[],"imports":["Init","Common.Real.Sequence.Arithmetic","Common.Real.Sequence.Geometric"],"declarations":[]}
