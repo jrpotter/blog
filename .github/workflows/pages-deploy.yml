@@ -65,6 +65,7 @@ jobs:
             fancybox \
             fontawesome5 \
             jknapltx \
+            mathabx \
             ncctools \
             rsfs \
             soul \
