@@ -20,7 +20,7 @@ title: Joshua Potter
 
 tagline: A series of personal explorations.
 
-url: 'https://jrpotter.github.io'
+url: 'https://jrpotter.com'
 
 github:
   username: jrpotter
@@ -90,7 +90,7 @@ toc: true
 comments:
   active: giscus
   giscus:
-    repo: jrpotter/jrpotter.github.io
+    repo: jrpotter/portfolio
     repo_id: R_kgDOGgCqhw
     category: General
     category_id: DIC_kwDOGgCqh84CWJNi

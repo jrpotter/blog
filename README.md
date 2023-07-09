@@ -1,4 +1,4 @@
-# jrpotter.github.io
+# Portfolio
 
 This is my personal blog, powered by [Jekyll](https://jekyllrb.com/) and themed
 with [Chirpy](https://github.com/cotes2020/jekyll-theme-chirpy).
@@ -22,14 +22,4 @@ Afterward, run the following sequence of commands:
 > bundle install
 > gem install jekyll
 > jekyll serve --watch
-```
-
-## Bookshelf
-
-This project also hosts an instance of [bookshelf](https://github.com/jrpotter/bookshelf).
-To replace the current collection of static files comprising a version of
-`bookshelf`, run the following:
-
-```bash
-make bookshelf
 ```
