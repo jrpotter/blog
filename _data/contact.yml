@@ -1,5 +1,11 @@
-- type: github
+-
+  type: github
   icon: 'fab fa-github'
-- type: zotero
+-
+  type: linkedin
+  icon: 'fab fa-linkedin'
+  url: 'https://www.linkedin.com/in/jrpotter2112/'
+-
+  type: zotero
   icon: 'fab fa-z'
   url:  'https://www.zotero.org/jrpotter2112/library'
