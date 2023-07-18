@@ -1,7 +1,8 @@
 ---
 title: Flake Templates
+categories: [Programming, Projects]
 tags: [nix]
-source: https://github.com/jrpotter/flake-templates
+github: https://github.com/jrpotter/flake-templates
 ---
 
 A collection of opinionated flake templates serving as minimal scaffolding for

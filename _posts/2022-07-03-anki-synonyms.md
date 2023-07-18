@@ -1,7 +1,8 @@
 ---
 title: Anki Synonyms
+categories: [Programming, Projects]
 tags: [anki, python]
-source: https://github.com/jrpotter/anki-synonyms
+github: https://github.com/jrpotter/anki-synonyms
 ---
 
 A small Anki plugin allowing users to specify synonyms within question and

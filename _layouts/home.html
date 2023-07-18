@@ -11,13 +11,23 @@ layout: page
 
   <div class="post-preview">
     <h1>
+    {% if post.github %}
+      <a target="_blank" href="{{ post.github }}">
+        <i class="fab fa-github"></i> &nbsp; {{ post.title }}
+      </a>
+    {% else %}
       <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    {% endif %}
     </h1>
 
     <div class="post-content">
       <p>
         {% include no-linenos.html content=post.content %}
+        {% if post.github %}
+        {{ content | markdownify | strip_html | escape }}
+        {% else %}
         {{ content | markdownify | strip_html | truncate: 350 | escape }}
+        {% endif %}
       </p>
     </div>
 
@@ -28,9 +38,21 @@ layout: page
         <i class="far fa-calendar fa-fw"></i>
         {% include timeago.html date=post.date tooltip=true %}
 
+        <!-- version -->
+        {% if post.version %}
+        <i class="far fa-window-restore"></i>
+        <span>
+          <a target="_blank" href="{{ post.github }}/releases/tag/{{ post.version }}">
+            {{ post.version }}
+          </a>
+        </span>
+        {% endif %}
+
+        {% unless post.github %}
         <!-- time to read -->
         <i class="far fa-clock fa-fw"></i>
         {% include read-time.html content=post.content %}
+        {% endunless %}
 
         <!-- categories -->
         {% if post.categories.size > 0 %}

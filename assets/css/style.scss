@@ -27,22 +27,4 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
   .post-content > p {
     -webkit-line-clamp: 4;
   }
-
-  .project-meta {
-    font-size: 0.85rem;
-    word-spacing: 1px;
-    display: flex;
-
-    .mr-auto {
-      margin-right: auto;
-    }
-
-    span:not(:last-child) {
-      margin-right: 1.2rem;
-    }
-
-    a {
-      color: #6c757d;
-    }
-  }
 }
