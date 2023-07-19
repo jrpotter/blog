@@ -19,6 +19,7 @@ Afterward, run the following sequence of commands:
 ```bash
 > rvm install 2.7.8
 > rvm use 2.7.8
+> gem install bundler:2.4.10
 > bundle install
 > gem install jekyll
 > jekyll serve --watch
