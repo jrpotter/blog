@@ -1,6 +1,5 @@
 ---
 title: Flake Templates
-categories: [Programming, Projects]
 tags: [nix]
 github: https://github.com/jrpotter/flake-templates
 ---

@@ -1,6 +1,5 @@
 ---
 title: Anki Synonyms
-categories: [Programming, Projects]
 tags: [anki, python]
 github: https://github.com/jrpotter/anki-synonyms
 ---

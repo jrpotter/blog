@@ -11,12 +11,9 @@ layout:
 tabs:
   # format: <filename_without_extension>: <value>
   home: Home
-  projects: Projects
   bookshelf: Bookshelf
-  categories: Categories
   tags: Tags
   archives: Archives
-  about: About
 
 # the text displayed in the search bar & search results
 search:
@@ -85,8 +82,3 @@ post:
       succeed: Link copied successfully!
   # pinned prompt of posts list on homepage
   pin_prompt: Pinned
-
-# categories page
-categories:
-  category_measure: categories
-  post_measure: posts

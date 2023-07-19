@@ -1,6 +1,5 @@
 ---
 title: Effect Systems
-categories: [Programming]
 tags: [haskell, category, effects, type]
 ---
 

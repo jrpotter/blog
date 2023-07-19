@@ -1,6 +1,5 @@
 ---
 title: Tagless Final Parsing
-categories: [Programming]
 tags: [haskell, parsing, type]
 ---
 
