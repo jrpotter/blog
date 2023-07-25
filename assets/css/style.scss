@@ -28,3 +28,52 @@ $tab-count: {{ site.tabs | size | plus: 1 }}; // plus 1 for home tab
     -webkit-line-clamp: 4;
   }
 }
+
+#project-list {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+  margin-top: 1.75rem;
+  padding-right: 0.5rem;
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .project-preview {
+    border-radius: 0.75rem;
+    border: 1px solid var(--card-border-color);
+    background: var(--card-bg);
+    flex: 1 0 20rem;
+    padding: 2rem;
+
+    h1 {
+      font-size: 1.4rem;
+      margin: 0;
+    }
+
+    .project-meta {
+      i {
+        font-size: 0.73rem;
+
+        &:not(:first-child) {
+          margin-left: 1.2rem;
+        }
+      }
+
+      em {
+        @extend %normal-font-style;
+      }
+    }
+
+    .project-content {
+      margin-top: 0.6rem;
+      margin-bottom: 0.6rem;
+      color: var(--post-list-text-color);
+
+      > p {
+        margin: 0;
+      }
+    }
+  }
+}

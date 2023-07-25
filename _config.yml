@@ -45,6 +45,7 @@ kramdown:
       start_line: 1
 
 collections:
+  projects:
   tabs:
     output: true
 
