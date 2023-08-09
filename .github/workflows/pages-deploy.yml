@@ -67,6 +67,7 @@ jobs:
             jknapltx \
             mathabx \
             ncctools \
+            pgf \
             rsfs \
             soul \
             stmaryrd \
