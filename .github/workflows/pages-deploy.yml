@@ -62,7 +62,6 @@ jobs:
             enumitem \
             environ \
             etoolbox \
-            fancybox \
             fontawesome5 \
             jknapltx \
             mathabx \
@@ -71,6 +70,7 @@ jobs:
             rsfs \
             soul \
             stmaryrd \
+            tcolorbox \
             xcolor
 
       - name: Setup Lean
