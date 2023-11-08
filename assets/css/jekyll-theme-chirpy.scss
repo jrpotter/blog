@@ -1,0 +1,15 @@
+---
+---
+
+// This must be defined before `@import`.
+
+@import 'main';
+
+/* append your custom style below */
+
+#sidebar header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}

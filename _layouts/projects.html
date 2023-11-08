@@ -1,56 +1,83 @@
 ---
-layout: page
-# The Project page layout
+layout: default
+refactor: true
 ---
 
 {% include lang.html %}
 
-<div id="project-list">
+<div id="post-list" class="flex-grow-1 px-xl-1">
+  {% for post in site.projects reversed %}
+    <article class="card-wrapper card">
+      <a target="_blank" href="{{ post.github }}" class="post-preview row g-0 flex-md-row-reverse">
+        {% assign card_body_col = '12' %}
 
-{% for project in site.projects reversed %}
+        {% if post.image %}
+          {% assign src = post.image.path | default: post.image %}
+          {% unless src contains '//' %}
+            {% assign src = post.img_path | append: '/' | append: src | replace: '//', '/' %}
+          {% endunless %}
 
-  <div class="project-preview">
-    <h1>
-      <a target="_blank" href="{{ project.github }}">{{ project.title }}</a>
-    </h1>
+          {% assign alt = post.image.alt | xml_escape | default: 'Preview Image' %}
 
-    <div class="project-content">
-      <p>
-        {% include no-linenos.html content=project.content %}
-        {{ content | markdownify | strip_html | escape }}
-      </p>
-    </div>
+          {% assign lqip = null %}
 
-    <div class="project-meta text-muted">
-      <div class="mr-auto">
-        <span>
-          <i class="far fa-calendar fa-fw"></i>
-          {% include timeago.html date=project.date tooltip=true %}
-        </span>
+          {% if post.image.lqip %}
+            {% capture lqip %}lqip="{{ post.image.lqip }}"{% endcapture %}
+          {% endif %}
 
-        {% if project.version %}
-        <i class="far fa-window-restore"></i>
-        <span>
-          <a target="_blank" href="{{ project.github }}/releases/tag/{{ project.version }}">
-            {{ project.version }}
-          </a>
-        </span>
+          <div class="col-md-5">
+            <img src="{{ src }}" alt="{{ alt }}" {{ lqip }}>
+          </div>
+
+          {% assign card_body_col = '7' %}
         {% endif %}
 
-        <!-- tags -->
-        {% if project.tags.size > 0 %}
-          <i class="fas fa-tag fa-fw"></i>
-          <span>
-          {% for tag in project.tags %}
-            {{ tag }}
-            {%- unless forloop.last -%},{%- endunless -%}
-          {% endfor %}
-          </span>
-        {% endif %}
-      </div>
-    </div>
-  </div>
+        <div class="col-md-{{ card_body_col }}">
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
 
-{% endfor %}
+            <div class="card-text content mt-0 mb-3">
+              <p>
+                {% include no-linenos.html content=post.content %}
+                {{ content | markdownify | strip_html | truncate: 200 | escape }}
+              </p>
+            </div>
 
-</div> <!-- #project-list -->
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <!-- posted date -->
+                <i class="far fa-calendar fa-fw me-1"></i>
+                {% include datetime.html date=post.date lang=lang %}
+
+                {% if post.version %}
+                <i class="far fa-window-restore fa-fw me-1"></i>
+                <span>
+                  {{ post.version }}
+                </span>
+                {% endif %}
+
+                <!-- tags -->
+                {% if post.tags.size > 0 %}
+                <i class="fas fa-tag fa-fw me-1"></i>
+                <span>
+                {% for tag in post.tags %}
+                  {{ tag }}
+                  {%- unless forloop.last -%},{%- endunless -%}
+                {% endfor %}
+                </span>
+                {% endif %}
+              </div>
+            </div>
+            <!-- .post-meta -->
+          </div>
+          <!-- .card-body -->
+        </div>
+      </a>
+    </article>
+  {% endfor %}
+</div>
+<!-- #post-list -->
+
+{% if paginator.total_pages > 1 %}
+  {% include post-paginator.html %}
+{% endif %}
