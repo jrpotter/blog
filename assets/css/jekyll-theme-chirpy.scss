@@ -13,3 +13,13 @@
   align-items: center;
   text-align: center;
 }
+
+#post-list .card .card-body .card-text.content p {
+  line-height: 1.75;
+  -webkit-line-clamp: 4;
+}
+
+#post-list.projects .card .card-body .card-text.content p {
+  overflow: auto;
+  -webkit-line-clamp: none;
+}
