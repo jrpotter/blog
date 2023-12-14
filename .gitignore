@@ -22,3 +22,6 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 vendor/
+
+# nix
+result
