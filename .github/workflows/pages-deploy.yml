@@ -43,54 +43,11 @@ jobs:
         id: pages
         uses: actions/configure-pages@v3
 
-      - name: Setup LaTeX
-        run: |
-          sudo apt-get install -y perl wget
-          cd /tmp
-          wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-          zcat < install-tl-unx.tar.gz | tar xf -
-          cd "$(find . -maxdepth 1 -type d -name 'install-tl-*')"
-          TEXLIVE_INSTALL_PREFIX="$HOME/.texlive" TEXLIVE_INSTALL_TEXDIR="$HOME/.texlive/2023" perl ./install-tl --no-interaction --scheme=scheme-basic
-          echo "$HOME/.texlive/2023/bin/x86_64-linux" >> $GITHUB_PATH
-
-      # Break out into separate command to access `$GITHUB_PATH`.
-      - name: Install Extra LaTeX Packages
-        run: |
-          tlmgr install \
-            bigfoot \
-            comment \
-            enumitem \
-            environ \
-            etoolbox \
-            fontawesome5 \
-            jknapltx \
-            mathabx \
-            ncctools \
-            pgf \
-            rsfs \
-            soul \
-            stmaryrd \
-            tcolorbox \
-            xcolor
-
-      - name: Setup Lean
-        run: |
-          set -o pipefail
-          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- --default-toolchain none -y
-          echo "$HOME/.elan/bin" >> $GITHUB_PATH
-
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3   # reads from a '.ruby-version' or '.tools-version' file if 'ruby-version' is omitted
           bundler-cache: true
-
-      - name: Build bookshelf
-        working-directory: _bookshelf
-        run: |
-          ./scripts/run_pdflatex.sh build > /dev/null || true
-          lake build Bookshelf:docs
-          cp -r build/doc ../lean
 
       - name: Build site
         run: bundle exec jekyll b -d "_site${{ steps.pages.outputs.base_path }}"
