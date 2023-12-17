@@ -9,7 +9,6 @@ If you have nix installed, you can use [direnv](https://direnv.net/) to launch a
 dev shell upon entering this directory (refer to `.envrc`). Otherwise run via:
 ```bash
 $ nix develop
-$ bundle install
 ```
 
 If you do not have nix installed, first install [rvm](https://rvm.io/rvm/install):
@@ -36,11 +35,10 @@ jekyll serve --watch
 Dependencies are managed using [bundix](https://github.com/nix-community/bundix).
 If you make any changes to the `Gemfile`, run the following:
 ```bash
-$ bundle lock
-$ bundix
+$ bundix -l
 ```
-This will update the `Gemfile.lock` and `gemset.nix` files respectively.
-Afterward you can run:
+This will update the `Gemfile.lock` and `gemset.nix` files. Afterward you can
+run:
 ```bash
 $ nix build
 ```
