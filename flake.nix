@@ -25,7 +25,7 @@
             buildInputs = [gems gems.wrappedRuby];
             src = ./.;
             version = "0.1.0";
-            installPhase = "bundle exec jekyll b -d $out";
+            installPhase = "jekyll b -d $out";
           };
 
           default = self.packages.${system}.app;
@@ -34,6 +34,7 @@
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
             bundix
+            gems
             gems.wrappedRuby
           ];
         };

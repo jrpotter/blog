@@ -26,9 +26,9 @@ $ gem install bundler:2.4.22
 $ bundle install
 ```
 
-Afterward you can launch the site locally by running:
+You can now launch the site locally:
 ```bash
-bundle exec jekyll serve --watch
+jekyll serve --watch
 ```
 
 ## Building
