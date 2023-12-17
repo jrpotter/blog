@@ -11,11 +11,10 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        ruby = pkgs.ruby_3_2;
         gems = pkgs.bundlerEnv {
-          inherit ruby;
           name = "blog-gems";
           gemdir = ./.;
+          ruby = pkgs.ruby_3_2;
         };
       in
       {
