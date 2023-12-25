@@ -1,6 +1,7 @@
 ---
 title: Effect Systems
 tags: [haskell, category, effects, type]
+categories: home
 ---
 
 As I've begun exploring the world of so-called **algebraic effect systems**,

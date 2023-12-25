@@ -4,7 +4,7 @@ layout: default
 
 {% include lang.html %}
 
-{% assign default = site.posts | where_exp: 'item', 'item.hidden != true and item.categories contains "home"' %}
+{% assign default = site.posts | where_exp: 'item', 'item.hidden != true and item.categories contains "devlog"' %}
 
 {% assign default_beg = paginator.page | minus: 1 | times: paginator.per_page %}
 {% assign default_num = paginator.posts | size %}

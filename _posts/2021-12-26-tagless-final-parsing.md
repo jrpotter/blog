@@ -1,6 +1,7 @@
 ---
 title: Tagless Final Parsing
 tags: [haskell, parsing, type]
+categories: home
 ---
 
 In his [introductory text](https://okmij.org/ftp/tagless-final/course/lecture.pdf),
