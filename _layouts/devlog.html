@@ -4,22 +4,8 @@ layout: default
 
 {% include lang.html %}
 
-{% assign default = site.posts | where_exp: 'item', 'item.categories contains "devlog"' %}
-
-{% assign default_beg = paginator.page | minus: 1 | times: paginator.per_page %}
-{% assign default_num = paginator.posts | size %}
-{% assign default_end = default_beg | plus: default_num | minus: 1 %}
-
-{% assign posts = '' | split: '' %}
-
-{% if default_num > 0 %}
-  {% for i in (default_beg..default_end) %}
-    {% assign posts = posts | push: default[i] %}
-  {% endfor %}
-{% endif %}
-
 <div id="post-list" class="flex-grow-1 px-xl-1">
-  {% for post in posts %}
+  {% for post in paginator.posts %}
     <article class="card-wrapper card">
       <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
         {% assign card_body_col = '12' %}
@@ -91,6 +77,4 @@ layout: default
 </div>
 <!-- #post-list -->
 
-{% if paginator.total_pages > 1 %}
-  {% include post-paginator.html %}
-{% endif %}
+{% include post-paginator.html %}
