@@ -10,7 +10,7 @@ timezone: America/New_York
 
 avatar: https://avatars.githubusercontent.com/u/3267697?v=4
 
-paginate: 20
+paginate: 10
 
 # ========================================
 # jekyll-seo-tag settings
