@@ -33,11 +33,18 @@
           <span>{{ site.data.locales[include.lang].tabs.home | upcase }}</span>
         </a>
       </li>
+      <!-- devlog -->
+      <li class="nav-item{% if page.pagination.category == 'devlog' %}{{ " active" }}{% endif %}">
+        <a href="{{ '/devlog' | relative_url }}" class="nav-link">
+          <i class="fa-fw fas fa-terminal"></i>
+          <span>{{ site.data.locales[include.lang].tabs.devlog | upcase }}</span>
+        </a>
+      </li>
       <!-- the real tabs -->
       {% assign sorted_tabs = site.tabs | sort: "order" %}
       {% for tab in sorted_tabs %}
         <li class="nav-item{% if tab.url == page.url %}{{ " active" }}{% endif %}">
-          <a href="{{ tab.url | relative_url }}" class="nav-link">
+          <a href="{{ tab.url | prepend: site.baseurl }}" class="nav-link">
             <i class="fa-fw {{ tab.icon }}"></i>
             {% capture tab_name %}{{ tab.url | split: '/' }}{% endcapture %}
 
