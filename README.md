@@ -21,7 +21,6 @@ Afterward, run the following sequence of commands:
 ```bash
 $ rvm install 3.2.2
 $ rvm use 3.2.2
-$ gem install bundler:2.4.22
 $ bundle install
 ```
 
