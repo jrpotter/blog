@@ -88,9 +88,11 @@ too is a monad. Unfortunately this is not the case - it isn't even a functor!
 Give it a try or use `{-# LANGUAGE DeriveFunctor #-}` to ask the compiler to
 make an attempt on your behalf.
 
-{% include tip.html content="Type variable `a` is said to be contravariant with
-respect to `Cons`. That is, `a` resides in a [negative position](https://www.fpcomplete.com/blog/2016/11/covariance-contravariance/)
-within `Cons`'s function." %}
+{% tip %}
+Type variable `a` is said to be contravariant with respect to `Cons`. That is,
+`a` resides in a [negative position](https://www.fpcomplete.com/blog/2016/11/covariance-contravariance/)
+within `Cons`'s function.
+{% endtip %}
 
 If we can't make this a monad as is, are there a minimal number of changes we
 could introduce to make it happen? Ideally our changes maintain the "shape" of
@@ -504,10 +506,11 @@ instance Member sig (l1 :+: (l2 :+: r)) =>
 The above allows us to operate on a *tree* of types rather than a list. We can
 read this as saying "subtying is not affected by how `:+:` is associated."
 
-{% include warning.html content="These instances will not compile as is. A mix
-of `TypeApplications` and `OVERLAPPING` pragmas must be used. Refer to the
-[git repository](https://github.com/jrpotter/effect-systems) for the real
-implementation." %}
+{% warning %}
+These instances will not compile as is. A mix of `TypeApplications` and
+`OVERLAPPING` pragmas must be used. Refer to the [git repository](https://github.com/jrpotter/effect-systems)
+for the real implementation.
+{% endwarning %}
 
 With the above instances in place, we can now create a more flexible
 implementation of `threadedState` above:
@@ -588,8 +591,9 @@ newtype Throw e k = Throw e deriving (Functor)
 throw e = inject (Throw e)
 ```
 
-{% include info.html content="To avoid too many distractions, we will sometimes
-skip writing type signatures." %}
+{% info %}
+To avoid too many distractions, we will sometimes skip writing type signatures.
+{% endinfo %}
 
 This `Throw` type should feel very intuitive at this point. We take an exception
 and "inject" it into our program using the `throw` smart constructor. What's the
@@ -732,10 +736,11 @@ was `Type -> Type`. In this new definition, we see it is now
 `(Type -> Type) -> (Type -> Type)`. That is, `f` is now a function that maps
 one type function to another. We have entered the world of higher-order kinds.
 
-{% include info.html content="`f` is usually a natural transformation, mapping
-one functor to another. The specifics regarding natural transformations aren't
-too important here. Just note when we use the term going forward, we mean a
-functor to functor mapping." %}
+{% info %}
+`f` is usually a natural transformation, mapping one functor to another. The
+specifics regarding natural transformations aren't too important here. Just note
+when we use the term going forward, we mean a functor to functor mapping.
+{% endinfo %}
 
 Ideally we can extrapolate our learnings so far to this higher-order world. Of
 most importance is our `Functor`-constrained type variable `f`. Let's dive a bit
