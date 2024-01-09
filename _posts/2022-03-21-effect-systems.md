@@ -13,14 +13,14 @@ post is to address this issue, at least to some degree, in a focused,
 pedagogical fashion.
 
 A large portion of this post has been derived from the implementation of the
-[fused-effects](https://hackage.haskell.org/package/fused-effects) library,
-chosen because it seems to have the most active development, the smallest
-dependency footprint, and minimal type machinery. In turn, this library was
-largely inspired by Nicolas Wu, Tom Schrijvers, and Ralf Hinze's work in
-[Effect Handlers in Scope](https://www.cs.ox.ac.uk/people/nicolas.wu/papers/Scope.pdf).
-As such, we'll discuss choice parts of this paper as well.
+[fused-effects](/snapshots/effect-systems/fused-effects) library, chosen
+because it seems to have the most active development, the smallest dependency
+footprint, and minimal type machinery. In turn, this library was largely
+inspired by Nicolas Wu, Tom Schrijvers, and Ralf Hinze's work in
+[Effect Handlers in Scope](/snapshots/effect-systems/scope.pdf). As such, we'll
+discuss choice parts of this paper as well.
 
-Code snippets can be found in [this git repository](https://github.com/jrpotter/effect-systems).
+Code snippets can be found in [this git repository](https://git.jrpotter.com/blog/effect-systems).
 
 {% include inline-toc.html %}
 
@@ -90,7 +90,7 @@ make an attempt on your behalf.
 
 {% tip %}
 Type variable `a` is said to be contravariant with respect to `Cons`. That is,
-`a` resides in a [negative position](https://www.fpcomplete.com/blog/2016/11/covariance-contravariance/)
+`a` resides in a [negative position](/snapshots/effect-systems/covariance-contravariance)
 within `Cons`'s function.
 {% endtip %}
 
@@ -171,7 +171,7 @@ without much fanfare). That is, we are requiring type variable `f` to be a
 `Functor`! With this in mind, we can actually massage our first parameter into a
 bind-compatible one by simply omitting it altogether.
 
-To elaborate, it is [well known](https://bartoszmilewski.com/2015/02/03/functoriality/)
+To elaborate, it is [well known](/snapshots/effect-systems/functoriality)
 simple algebraic data types are isomorphic to "primitive" functors (`Identity`
 and `Const`) and that (co)products of functors yield more functors. We can
 therefore "absorb" the syntax of `a` *into* `f` by using a product type as a
@@ -508,8 +508,9 @@ read this as saying "subtying is not affected by how `:+:` is associated."
 
 {% warning %}
 These instances will not compile as is. A mix of `TypeApplications` and
-`OVERLAPPING` pragmas must be used. Refer to the [git repository](https://github.com/jrpotter/effect-systems)
-for the real implementation.
+`OVERLAPPING` pragmas must be used. Refer to the
+[git repository](https://git.jrpotter.com/blog/effect-systems) for the real
+implementation.
 {% endwarning %}
 
 With the above instances in place, we can now create a more flexible
@@ -581,9 +582,9 @@ threadedStateM'' = do
 
 This composition provides many benefits, but in certain situations we end up
 hitting a wall. To continue forward, we borrow an example from
-[Effect Handlers in Scope](https://www.cs.ox.ac.uk/people/nicolas.wu/papers/Scope.pdf).
-In particular, we discuss exception handling and how we can use a free monad to
-simulate throwing and catching exceptions.
+[Effect Handlers in Scope](/snapshots/effect-systems/scope.pdf). In particular,
+we discuss exception handling and how we can use a free monad to simulate
+throwing and catching exceptions.
 
 ```haskell
 newtype Throw e k = Throw e deriving (Functor)
@@ -1040,13 +1041,13 @@ data Server hdl conn (m :: * -> *) k where
 ```
 
 The issue here being running the custom `Server` handler invokes `start` *and*
-`stop` when wrapped in some [bracket](https://github.com/fused-effects/fused-effects-exceptions)-like
+`stop` when wrapped in some [bracket](https://git.jrpotter.com/r/fused-effects-exceptions)-like
 interface, even if the bracketed code has not yet finished. I have settled on
 workarounds, but these workarounds consist of just structuring these kind of
 effects differently.
 
 In general, modeling asynchronous or `IO`-oriented operations feel "unsolved"
-with solutions resorting to some [forklift](https://apfelmus.nfshost.com/blog/2012/06/07-forklift.html)
+with solutions resorting to some [forklift](/snapshots/effect-systems/forklift)
 strategy or other ad-hoc solutions that don't feel as cemented in literature. I
 don't necessarily think these are the *wrong* approach (I frankly don't know
 enough to have a real opinion here), but it'd be nice to feel there was some
