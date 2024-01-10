@@ -521,11 +521,7 @@ That is, if `a1` and `a2` are the same types, and `b1` and `b2` are the same
 types, then functions of type `a1 -> b1` can equivalently be expressed as
 functions from `a2 -> b2`.
 
-<details style="border: 1px dashed rgba(155, 155, 155, 0.8); padding: 6px;">
-  <summary>
-    <strong>Answer</strong>
-  </summary>
-  <div style="padding-top: 12px;" markdown="1">
+{% accordion Answer %}
 I suggest reading from the bottom up to better understand why this works.
 ```haskell
 import Data.Eq.Type ((:=)(..), refl)
@@ -549,8 +545,7 @@ functionEquality
   . F1       -- F1 (a1 -> b1) b1 a1
   $ refl     -- (a1 -> b1) := (a1 -> b1)
 ```
-  </div>
-</details>
+{% endaccordion %}
 
 ### Dynamics
 
