@@ -1,9 +1,32 @@
 ---
-layout: page
-math: true
+title: How to Solve It
+tags: [proof, math, problem solving]
+categories: home
 ---
 
-## Problem 1
+Much of my focus over the past year or two has been oriented around learning how
+to learn, and systematizing how I go about thinking and solving problems. To
+this end I've created thousands of [Anki flashcards](https://ankiweb.net/about),
+tried various [Zettelkasten](https://zettelkasten.de/) systems, and studied
+epistemological thinking with respect to math and computer science.
+
+One of the most well-known books in this third space is George Pólya's
+*How to Solve It*. In this post, I transcribed the problems he listed at the end
+of the book and try to solve them in two ways. The first listed solution will
+recount my "default" approach. This will include my general thought processes,
+where I'm potentially stuck, and how I go about working around those thoughts.
+The second approach will try to systematically use Pólya's framework as
+described in the book.
+
+To avoid influencing my "default" approach with Pólya's method, I solve every
+problem "my way" before starting back at problem 1 with Polya's approach in
+hand. In each I'll compare both approaches to the problem at hand.
+
+{% include inline-toc.html %}
+
+## Problems
+
+### Question 1
 
 A bear, starting from the point $P$, walked one mile due south. Then he changed
 direction and walked one mile due east. Then he turned again to the left and
@@ -14,7 +37,7 @@ What was the color of the bear?
 _
 {% endaccordion %}
 
-## Problem 2
+### Question 2
 
 Bob wants a piece of land, exactly level, which has four boundary lines. Two
 boundary lines run exactly north-south, the two others exactly east-west, and
@@ -25,7 +48,7 @@ land in the U.S.?
 _
 {% endaccordion %}
 
-## Problem 3
+### Question 3
 
 Bob as $10$ pockets and $44$ silver dollars. He wants to put his dollars into
 his pockets so distributed that each pocket contains a different number of
@@ -35,7 +58,7 @@ dollars. Can do do so?
 _
 {% endaccordion %}
 
-## Problem 4
+### Question 4
 
 To number the pages of a bulky volume, the printer used $2989$ digits. How many
 pages has the volume?
@@ -44,7 +67,7 @@ pages has the volume?
 _
 {% endaccordion %}
 
-## Problem 5
+### Question 5
 
 Among Grandfather's papers a bill was found:
 
@@ -60,7 +83,7 @@ What are the two faded digits and what was the price of one turkey?
 _
 {% endaccordion %}
 
-## Problem 6
+### Question 6
 
 Given a regular hexagon and a point in its plane. Draw a straight line through
 the given point that divides the given hexagon into two parts of equal area.
@@ -69,7 +92,7 @@ the given point that divides the given hexagon into two parts of equal area.
 _
 {% endaccordion %}
 
-## Problem 7
+### Question 7
 
 Given a square. Find the locus of the points from which the square is seen under
 an angle (a) of $90^\circ$ (b) of $45^\circ$. (Let $P$ be a point outside the
@@ -81,7 +104,7 @@ clearly both loci and give a full description.
 _
 {% endaccordion %}
 
-## Problem 8
+### Question 8
 
 Call "axis" of a solid a straight line joining two ponits of the surface of the
 solid and such that the solid, rotated about this line through an angle which is
@@ -95,7 +118,7 @@ unit length, compute the arithmetic mean of the lengths of the axes.
 _
 {% endaccordion %}
 
-## Problem 9
+### Question 9
 
 In a tetrahedron (which is not necessarily regular) two opposite edges have the
 same length $a$ and they are perpendicular to each other. Moreover they are each
@@ -106,7 +129,7 @@ volume of the tetrahedron in terms of $a$ and $b$, and prove your answer.
 _
 {% endaccordion %}
 
-## Problem 10
+### Question 10
 
 The vertex of a pyramid opposite the base is called the *apex*. (a) Let us call
 a pyramid "isosceles" if its apex is at the same distance from all vertices of
@@ -124,7 +147,7 @@ altitude.
 _
 {% endaccordion %}
 
-## Problem 11
+### Question 11
 
 Find $x$, $y$, $u$, and $v$, satisfying the system of four equations
 
@@ -141,7 +164,7 @@ $$\begin{align*}
 _
 {% endaccordion %}
 
-## Problem 12
+### Question 12
 
 Bob, Peter, and Paul travel together. Peter and Paul are good hikers; each walk
 $p$ miles per hour. Bob has a bad foot and drives a small car in which two
@@ -162,7 +185,7 @@ and the whole procedure is repeated as often as necessary.
 _
 {% endaccordion %}
 
-## Problem 13
+### Question 13
 
 Three numbers are in arithmetic progression, three other numbers in geometric
 progression. Adding the corresponding terms of these two progressions
@@ -174,7 +197,7 @@ of both progressions.
 _
 {% endaccordion %}
 
-## Problem 14
+### Question 14
 
 Determine $m$ so that the equation in $x$
 
@@ -186,7 +209,7 @@ has four real roots in arithmetic progression.
 _
 {% endaccordion %}
 
-## Problem 15
+### Question 15
 
 The length of the perimeter of a right triangle is $60$ inches and the length
 of the altitude perpendicular to the hypotenuse is $12$ inches. Find the sides.
@@ -195,7 +218,7 @@ of the altitude perpendicular to the hypotenuse is $12$ inches. Find the sides.
 _
 {% endaccordion %}
 
-## Problem 16
+### Question 16
 
 From the peak of a mountain you see two points, $A$ and $B$, in the plain. The
 lines of vision, directed to these points, include the angle $\gamma$. The
@@ -210,7 +233,7 @@ terms of the angles $\alpha$, $\beta$, $\gamma$, and the distance $c$.
 _
 {% endaccordion %}
 
-## Problem 17
+### Question 17
 
 Observe that the value of
 
@@ -224,7 +247,7 @@ prove you guess.
 _
 {% endaccordion %}
 
-## Problem 18
+### Question 18
 
 Consider the table
 
@@ -243,7 +266,7 @@ mathematical notation, and prove it.
 _
 {% endaccordion %}
 
-## Problem 19
+### Question 19
 
 The side of a regular hexagon is of length $n$ ($n$ is an integer). By
 equidistance parallels to its sides the hexagon is divided into $T$ equilateral
@@ -258,7 +281,7 @@ $n$. (Guessing is good, proving is better.)
 _
 {% endaccordion %}
 
-## Problem 20
+### Question 20
 
 In how many ways can you change one dollar? (The "way of changing" is determined
 if it is known how many coins of each kind - cents, nickels, dimes, quarters,
@@ -267,3 +290,11 @@ half dollars - are used.)
 {% accordion TODO %}
 _
 {% endaccordion %}
+
+## General Thoughts
+
+TODO
+
+## Conclusion
+
+TODO
