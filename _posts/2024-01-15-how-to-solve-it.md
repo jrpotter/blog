@@ -13,19 +13,19 @@ reading many books on the subject. The purpose of this post is to discuss one of
 these books.
 
 George Pólya's *How to Solve It* is a very well-known text on how to
-methodically approach a problem, where the word "problem" here is used in a very
-general sense. I've transcribed the practice problems Pólya lists at the end of
-his book and try to solve them in two ways. The first listed solution will
-recount my "default" approach. That is, my general thought process, where
-I feel stuck, and how I go about working around any barriers I encounter,
-without any intentional effort to use Pólya's framework. The second approach
-will instead use that framework to try and systematically break down the
-problem.
+methodically approach a problem. I've transcribed the practice problems Pólya
+lists at the end of his book and try to solve them in two ways. The first listed
+solution will recount my "default" approach. Here I'll write out my thoughts as
+I have them, detailing my thought process, points where I feel stuck or unsure,
+and eventually the answer I commit to (to be highlighted in **bold**). Once I
+finish going through all the problems, I'll run through them each again but with
+Pólya's framework equipped. The hope here is to more systematically break down
+the problem and contrast the strategy against those I use in my initial
+attempts.
 
-To avoid influencing my "default" approach with Pólya's method, I solve every
-problem "my way" before starting back at [question 1](#question-1) with Polya's
-approach in hand. After I solve a problem both ways, I then write a small
-snippet describing my thoughts on the two approaches.
+After my second pass, I'll perform a final pass in which I transcribe the
+answers found in the back of the book and discuss my overall thoughts on the
+problem.
 
 {% include inline-toc.html %}
 
@@ -38,7 +38,7 @@ direction and walked one mile due east. Then he turned again to the left and
 walked one mile due north, and arrived exactly at the point $P$ he started from.
 What was the color of the bear?
 
-{% accordion Default %}
+{% accordion First Pass %}
 After reading this question, my mind immediately goes to what possible colors
 a bear can take on. I think "brown", "black", and "white". A distinguishing
 feature of the different colored bears is geography, so, considering the
@@ -49,10 +49,15 @@ picture this:
 
 ![question1](/assets/img/how-to-solve-it/question1.jpg)
 
-Since this path would only be possible at Earth's poles, the bear must be white.
+Since this path would only be possible at Earth's poles, the bear must be
+**white**.
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -63,11 +68,58 @@ boundary lines run exactly north-south, the two others exactly east-west, and
 each boundary line measures exactly $100$ feet. Can Bob buy such a piece of
 land in the U.S.?
 
-{% accordion Default %}
+{% accordion First Pass %}
+There are a couple of constraints that are defined in the problem description:
+
+* The plot of land must be $100 \text{ ft}^2$.
+* The plot of land must be exactly level.
+* The plot of land must exist within the U.S.
+
+Finding a plot of land this large that is exactly level feels impossible. My
+immediate reaction is that the answer to this question is "no" because of this
+condition alone.
+
+---
+
+Taking a step back though, I'm making a few assumptions that took me a while to
+realize I was making. Let's revisit the conditions again, but more at face
+value.
+
+One, the piece of land must be in the U.S. What does this condition enforce?
+Well, it does at least limit the sort of geometrical shenangians
+[question 1](#question-1) took advantage of. If constrained to within the U.S.,
+a region having north-south and east-west boundary lines should form a shape
+closer to a square than an equivalently-defined shape closer to either of
+Earth's poles. That doesn't necessarily mean these boundary lines do form a
+square though - it's wrong to assume we're looking for a $100 \text{ ft}^2$ plot
+of land.
+
+Two, this piece of land should be exactly level. I didn't realize it at first,
+but I had implicitly added the constraint that this piece of land must be
+naturally occurring. If we had a plot of land satisfying the other two
+conditions, we could make the plot level prior to sale, allowing us to answer
+our question in the affirmative.
+
+The question now becomes whether or not we can form a closed shape in which two
+boundary lines are exactly north-south, two boundary lines are exactly
+east-west, and all four line measure $100\text{ ft}$. A diagram in this case
+helps:
+
+![question2](/assets/img/how-to-solve-it/question2.jpg)
+
+What this diagram makes clear is that closed regions in the northern hemisphere
+bounded by lines running exactly north-south and east-west have a shorter
+top-edge (i.e. the edge closer to the north pole) than bottom-edge (i.e. the
+edge closer to the equator). Though the scale of the diagram is much larger than
+our problem entails, the principle remains the same. The answer remains **no**,
+though for reasons different than that of my initial reaction.
+{% endaccordion %}
+
+{% accordion Second Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -77,11 +129,15 @@ Bob as $10$ pockets and $44$ silver dollars. He wants to put his dollars into
 his pockets so distributed that each pocket contains a different number of
 dollars. Can do do so?
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -90,11 +146,15 @@ _
 To number the pages of a bulky volume, the printer used $2989$ digits. How many
 pages has the volume?
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -110,11 +170,15 @@ now illegible.
 
 What are the two faded digits and what was the price of one turkey?
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -123,11 +187,15 @@ _
 Given a regular hexagon and a point in its plane. Draw a straight line through
 the given point that divides the given hexagon into two parts of equal area.
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -139,11 +207,15 @@ square, but in the same plane. The smallest angle with vertex $P$ containing
 the square is the "angle under which the square is seen" from $P$.) Sketch
 clearly both loci and give a full description.
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -157,11 +229,15 @@ Find the axes of a cube. Describe clearly the location of the axes, find the
 angle of rotation associated with each. Assuming that the edge of the cube is of
 unit length, compute the arithmetic mean of the lengths of the axes.
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -172,11 +248,15 @@ same length $a$ and they are perpendicular to each other. Moreover they are each
 perpendicular to a line of length $b$ which joins their midpoints. Express the
 volume of the tetrahedron in terms of $a$ and $b$, and prove your answer.
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -194,11 +274,15 @@ altitude.
 *circumscribed* about a circle the center of which is the foot of the pyramid's
 altitude.
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -215,11 +299,15 @@ $$\begin{align*}
 
 (This may look long and boring: look for a short cut.)
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -240,11 +328,15 @@ and the whole procedure is repeated as often as necessary.
 
 (c) Check the extreme cases $p = 0$ and $p = c$.
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -256,11 +348,15 @@ successively, we obtain $$85, 76, \text{ and } 84$$ respectively, and, adding
 all three terms of the arithmetic progression, we obtain $126$. Find the terms
 of both progressions.
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -272,11 +368,15 @@ $$x^4 - (3m + 2)x^2 + m^2 = 0$$
 
 has four real roots in arithmetic progression.
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -285,11 +385,15 @@ _
 The length of the perimeter of a right triangle is $60$ inches and the length
 of the altitude perpendicular to the hypotenuse is $12$ inches. Find the sides.
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -304,11 +408,15 @@ same level and that thte distance between them is $c$.
 Express the elevation $x$ of the peak above the common level of $A$ and $B$ in
 terms of the angles $\alpha$, $\beta$, $\gamma$, and the distance $c$.
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -322,11 +430,15 @@ is $\frac{1}{2}$, $\frac{5}{6}$, $\frac{23}{24}$ for $n = 1, 2, 3$,
 respectively, guess the general law (by observing more values if necessary) and
 prove you guess.
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -345,11 +457,15 @@ $$\begin{align*}
 Guess the general law suggested by these examples, express it in suitable
 mathematical notation, and prove it.
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -364,11 +480,15 @@ more triangles.) When $n = 1$, which is the simplest case, $T = 6$, $V = 7$,
 $L = 12$. Consider the general case and express $T$, $V$, and $L$ in terms of
 $n$. (Guessing is good, proving is better.)
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
+_
+{% endaccordion %}
+
+{% accordion Final Pass %}
 _
 {% endaccordion %}
 
@@ -378,17 +498,17 @@ In how many ways can you change one dollar? (The "way of changing" is determined
 if it is known how many coins of each kind - cents, nickels, dimes, quarters,
 half dollars - are used.)
 
-{% accordion Default %}
+{% accordion First Pass %}
 _
 {% endaccordion %}
 
-{% accordion Framework %}
+{% accordion Second Pass %}
 _
 {% endaccordion %}
 
-## General Thoughts
-
-TODO
+{% accordion Final Pass %}
+_
+{% endaccordion %}
 
 ## Conclusion
 
