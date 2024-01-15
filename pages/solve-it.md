@@ -123,3 +123,147 @@ altitude.
 {% accordion TODO %}
 _
 {% endaccordion %}
+
+## Problem 11
+
+Find $x$, $y$, $u$, and $v$, satisfying the system of four equations
+
+$$\begin{align*}
+    x + 7y + 3v + 5u &= 16 \\
+    8x + 4y + 6v + 2u &= -16 \\
+    2x + 6y + 4v + 8u &= 16 \\
+    5x + 3y + 7v + u &= -16 \\
+\end{align*}$$
+
+(This may look long and boring: look for a short cut.)
+
+{% accordion TODO %}
+_
+{% endaccordion %}
+
+## Problem 12
+
+Bob, Peter, and Paul travel together. Peter and Paul are good hikers; each walk
+$p$ miles per hour. Bob has a bad foot and drives a small car in which two
+people can ride, but not three; the car covers $c$ miles per hour. The three
+friends adopted the following scheme: They start together, Paul rides in the car
+with Bob, Peter walks. After a while, Bob drops Paul, who walks on; Bob returns
+to pick up Peter, and then Bob and Peter ride in the car till they overtake
+Paul. At this point they change: Paul rides and Peter walks just as they started
+and the whole procedure is repeated as often as necessary.
+
+(a) How much progress (how many miles) does the company make per hour?
+
+(b) Through which fraction of the travel time does the car carry just one man?
+
+(c) Check the extreme cases $p = 0$ and $p = c$.
+
+{% accordion TODO %}
+_
+{% endaccordion %}
+
+## Problem 13
+
+Three numbers are in arithmetic progression, three other numbers in geometric
+progression. Adding the corresponding terms of these two progressions
+successively, we obtain $$85, 76, \text{ and } 84$$ respectively, and, adding
+all three terms of the arithmetic progression, we obtain $126$. Find the terms
+of both progressions.
+
+{% accordion TODO %}
+_
+{% endaccordion %}
+
+## Problem 14
+
+Determine $m$ so that the equation in $x$
+
+$$x^4 - (3m + 2)x^2 + m^2 = 0$$
+
+has four real roots in arithmetic progression.
+
+{% accordion TODO %}
+_
+{% endaccordion %}
+
+## Problem 15
+
+The length of the perimeter of a right triangle is $60$ inches and the length
+of the altitude perpendicular to the hypotenuse is $12$ inches. Find the sides.
+
+{% accordion TODO %}
+_
+{% endaccordion %}
+
+## Problem 16
+
+From the peak of a mountain you see two points, $A$ and $B$, in the plain. The
+lines of vision, directed to these points, include the angle $\gamma$. The
+inclination of the first line of vision to a horizontal plane is $\alpha$, that
+of the second line $\beta$. It is known that the points $A$ and $B$ are on the
+same level and that thte distance between them is $c$.
+
+Express the elevation $x$ of the peak above the common level of $A$ and $B$ in
+terms of the angles $\alpha$, $\beta$, $\gamma$, and the distance $c$.
+
+{% accordion TODO %}
+_
+{% endaccordion %}
+
+## Problem 17
+
+Observe that the value of
+
+$$\frac{1}{2!} + \frac{2}{3!} + \frac{3}{4!} + \cdots + \frac{n}{(n + 1)!}$$
+
+is $\frac{1}{2}$, $\frac{5}{6}$, $\frac{23}{24}$ for $n = 1, 2, 3$,
+respectively, guess the general law (by observing more values if necessary) and
+prove you guess.
+
+{% accordion TODO %}
+_
+{% endaccordion %}
+
+## Problem 18
+
+Consider the table
+
+$$\begin{align*}
+1 & = 1 \\
+3 + 5 & = 8 \\
+7 + 9 + 11 & = 27 \\
+13 + 15 + 17 + 19 & = 64 \\
+21 + 23 + 25 + 27 + 29 &= 125
+\end{align*}$$
+
+Guess the general law suggested by these examples, express it in suitable
+mathematical notation, and prove it.
+
+{% accordion TODO %}
+_
+{% endaccordion %}
+
+## Problem 19
+
+The side of a regular hexagon is of length $n$ ($n$ is an integer). By
+equidistance parallels to its sides the hexagon is divided into $T$ equilateral
+triangles each of which has sides of length $1$. Let $V$ denote the number of
+vertices appearing in this division, and $L$ the number of boundary lines of
+length $1$. (A boundary line belongs to one or two triangles, a vertex to two or
+more triangles.) When $n = 1$, which is the simplest case, $T = 6$, $V = 7$,
+$L = 12$. Consider the general case and express $T$, $V$, and $L$ in terms of
+$n$. (Guessing is good, proving is better.)
+
+{% accordion TODO %}
+_
+{% endaccordion %}
+
+## Problem 20
+
+In how many ways can you change one dollar? (The "way of changing" is determined
+if it is known how many coins of each kind - cents, nickels, dimes, quarters,
+half dollars - are used.)
+
+{% accordion TODO %}
+_
+{% endaccordion %}
