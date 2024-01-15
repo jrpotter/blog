@@ -2,25 +2,30 @@
 title: How to Solve It
 tags: [proof, math, problem solving]
 categories: home
+math: true
 ---
 
 Much of my focus over the past year or two has been oriented around learning how
-to learn, and systematizing how I go about thinking and solving problems. To
-this end I've created thousands of [Anki flashcards](https://ankiweb.net/about),
-tried various [Zettelkasten](https://zettelkasten.de/) systems, and studied
-epistemological thinking with respect to math and computer science.
+to learn and systematizing how I go about thinking and solving problems. To this
+end I've created thousands of [Anki flashcards](https://ankiweb.net/about),
+tried various [Zettelkasten](https://zettelkasten.de/) systems, and began
+reading many books on the subject. The purpose of this post is to discuss one of
+these books.
 
-One of the most well-known books in this third space is George Pólya's
-*How to Solve It*. In this post, I transcribed the problems he listed at the end
-of the book and try to solve them in two ways. The first listed solution will
-recount my "default" approach. This will include my general thought processes,
-where I'm potentially stuck, and how I go about working around those thoughts.
-The second approach will try to systematically use Pólya's framework as
-described in the book.
+George Pólya's *How to Solve It* is a very well-known text on how to
+methodically approach a problem, where the word "problem" here is used in a very
+general sense. I've transcribed the practice problems Pólya lists at the end of
+his book and try to solve them in two ways. The first listed solution will
+recount my "default" approach. That is, my general thought process, where
+I feel stuck, and how I go about working around any barriers I encounter,
+without any intentional effort to use Pólya's framework. The second approach
+will instead use that framework to try and systematically break down the
+problem.
 
 To avoid influencing my "default" approach with Pólya's method, I solve every
-problem "my way" before starting back at problem 1 with Polya's approach in
-hand. In each I'll compare both approaches to the problem at hand.
+problem "my way" before starting back at [question 1](#question-1) with Polya's
+approach in hand. After I solve a problem both ways, I then write a small
+snippet describing my thoughts on the two approaches.
 
 {% include inline-toc.html %}
 
@@ -33,7 +38,21 @@ direction and walked one mile due east. Then he turned again to the left and
 walked one mile due north, and arrived exactly at the point $P$ he started from.
 What was the color of the bear?
 
-{% accordion TODO %}
+{% accordion Default %}
+After reading this question, my mind immediately goes to what possible colors
+a bear can take on. I think "brown", "black", and "white". A distinguishing
+feature of the different colored bears is geography, so, considering the
+question discusses cardinal directions, this seems like the correct line of
+thinking. For a bear to walk in these three directions and end up in the same
+location means there must be a "bend" on the plane the bear is walking in. I
+picture this:
+
+![question1](/assets/img/how-to-solve-it/question1.jpg)
+
+Since this path would only be possible at Earth's poles, the bear must be white.
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -44,7 +63,11 @@ boundary lines run exactly north-south, the two others exactly east-west, and
 each boundary line measures exactly $100$ feet. Can Bob buy such a piece of
 land in the U.S.?
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -54,7 +77,11 @@ Bob as $10$ pockets and $44$ silver dollars. He wants to put his dollars into
 his pockets so distributed that each pocket contains a different number of
 dollars. Can do do so?
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -63,7 +90,11 @@ _
 To number the pages of a bulky volume, the printer used $2989$ digits. How many
 pages has the volume?
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -79,7 +110,11 @@ now illegible.
 
 What are the two faded digits and what was the price of one turkey?
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -88,7 +123,11 @@ _
 Given a regular hexagon and a point in its plane. Draw a straight line through
 the given point that divides the given hexagon into two parts of equal area.
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -100,7 +139,11 @@ square, but in the same plane. The smallest angle with vertex $P$ containing
 the square is the "angle under which the square is seen" from $P$.) Sketch
 clearly both loci and give a full description.
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -114,7 +157,11 @@ Find the axes of a cube. Describe clearly the location of the axes, find the
 angle of rotation associated with each. Assuming that the edge of the cube is of
 unit length, compute the arithmetic mean of the lengths of the axes.
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -125,7 +172,11 @@ same length $a$ and they are perpendicular to each other. Moreover they are each
 perpendicular to a line of length $b$ which joins their midpoints. Express the
 volume of the tetrahedron in terms of $a$ and $b$, and prove your answer.
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -143,7 +194,11 @@ altitude.
 *circumscribed* about a circle the center of which is the foot of the pyramid's
 altitude.
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -160,7 +215,11 @@ $$\begin{align*}
 
 (This may look long and boring: look for a short cut.)
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -181,7 +240,11 @@ and the whole procedure is repeated as often as necessary.
 
 (c) Check the extreme cases $p = 0$ and $p = c$.
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -193,7 +256,11 @@ successively, we obtain $$85, 76, \text{ and } 84$$ respectively, and, adding
 all three terms of the arithmetic progression, we obtain $126$. Find the terms
 of both progressions.
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -205,7 +272,11 @@ $$x^4 - (3m + 2)x^2 + m^2 = 0$$
 
 has four real roots in arithmetic progression.
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -214,7 +285,11 @@ _
 The length of the perimeter of a right triangle is $60$ inches and the length
 of the altitude perpendicular to the hypotenuse is $12$ inches. Find the sides.
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -229,7 +304,11 @@ same level and that thte distance between them is $c$.
 Express the elevation $x$ of the peak above the common level of $A$ and $B$ in
 terms of the angles $\alpha$, $\beta$, $\gamma$, and the distance $c$.
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -243,7 +322,11 @@ is $\frac{1}{2}$, $\frac{5}{6}$, $\frac{23}{24}$ for $n = 1, 2, 3$,
 respectively, guess the general law (by observing more values if necessary) and
 prove you guess.
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -262,7 +345,11 @@ $$\begin{align*}
 Guess the general law suggested by these examples, express it in suitable
 mathematical notation, and prove it.
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -277,7 +364,11 @@ more triangles.) When $n = 1$, which is the simplest case, $T = 6$, $V = 7$,
 $L = 12$. Consider the general case and express $T$, $V$, and $L$ in terms of
 $n$. (Guessing is good, proving is better.)
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
@@ -287,7 +378,11 @@ In how many ways can you change one dollar? (The "way of changing" is determined
 if it is known how many coins of each kind - cents, nickels, dimes, quarters,
 half dollars - are used.)
 
-{% accordion TODO %}
+{% accordion Default %}
+_
+{% endaccordion %}
+
+{% accordion Framework %}
 _
 {% endaccordion %}
 
