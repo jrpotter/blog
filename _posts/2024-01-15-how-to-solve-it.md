@@ -200,7 +200,51 @@ now illegible.
 What are the two faded digits and what was the price of one turkey?
 
 {% accordion First Pass %}
-_
+As a starting point, the first digit must be a number between $1$ and $9$
+inclusive. Similarly, the last number is between $0$ and $9$ inclusive. Assuming
+the real total is $N$, then we expect $N / 72$ to evaluate to a number with at
+most two decimal places. We also must somehow be convinced that the pair of
+numbers we find satisfying the problem statement is the *only* pair that could
+satisfy the problem statement.
+
+Let's try playing around with some digits to get a feel for the problem.
+Consider $N = \\$167.90$. Then $N / 72 \approx \\$2.332$ meaning we chose $N$
+wrong. Consider another pair of digits, say $N = \\$767.92$. Here
+$N / 72 \approx \\$10.666$. It's clear that picking and choosing values is not
+a great strategy. That said, it's not immediately obvious to me how to go about
+moving forward. A few thoughts I have:
+
+1. Why is the number $72$ used here?
+1. Are there certain "cent" values that only show up w.r.t. $72$?
+1. Is actually enumerating all $90$ possible pairs of digits a viable option?
+1. Can we define bounds on what the price of an individual turkey is?
+1. Can we reduce our search space down a bit?
+
+With (1), nothing immediately comes to mind as particularly interesting about
+$72$. Its factorization is something I'm considering, but how that helps isn't
+obvious. (2) relates to (5) so we'll return to this point later. (3) feels
+antithetical to the problem so I'm going to dismiss it.
+
+These last two questions feel like they might have legs though. Even if neither
+lead to a definitive answer, perhaps they'll provide insights into how to
+navigate the problem better. So, first off, can we define bounds on the price
+$P$ of an individual turkey? The smallest candidate for the total price is
+$\\$167.90$ whereas the largest candidate is $\\$967.99$. Therefore
+
+$$\\$2.332 \approx \\$167.90 / 72 \leq P \leq \\$967.99 / 72 \approx \\$13.444$$
+
+Next let's consider how we can reduce our search space. One optimization is that
+the last digit must be even (since $72$ is even). This reduces the possible
+number of pairs to check down to $45$. Now we revisit (2) - instead of looking
+at just one digit, can we look at the last two? Which of $90$, $92$, $94$, $96$,
+and $98$ could serve as a solution to $P \times 72 \bmod 100 \equiv x$?
+
+---
+
+Here I feel a bit discouraged. It feels like the approaches I'm taking are more
+complicated that the problem should warrant and I'm not feeling like I've found
+a "groove" to latch onto. For now, I'm going to take this as my first real
+problem to try applying Pólya's framework to.
 {% endaccordion %}
 
 {% accordion Second Pass %}
