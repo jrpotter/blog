@@ -125,12 +125,35 @@ _
 
 ### Question 3
 
-Bob as $10$ pockets and $44$ silver dollars. He wants to put his dollars into
+Bob has $10$ pockets and $44$ silver dollars. He wants to put his dollars into
 his pockets so distributed that each pocket contains a different number of
-dollars. Can do do so?
+dollars. Can he do so?
 
 {% accordion First Pass %}
-_
+Arbitrarily name the pockets $0, 1, \ldots, 9$ and denote the number of dollars
+in the $i^{\text{th}}$ pocket as $P_i$. There are two conditions to satisfy:
+
+1. $\sum_{i=0}^9 P_i = 44$.
+1. For all distinct integers $0 \leq i, j \leq 9$, $P_i \neq P_j$.
+
+To get a feel for the problem, let's see what happens if $P_i = i$ for
+$0 \leq i \leq 9$. In this scenario, condition 2 is trivially met. The number of
+dollars across the pockets would be $$0 + 1 + 2 + \cdots + 9 = 45.$$ By chance
+we likely discovered why the question chooses the number $44$ - it's value is
+one less than the total produced by taking this approach.
+
+In fact, this series consist of the smallest possible summands we can use that
+still "fits" the problem statement. Any other set of dollar amounts would
+produce a larger total. Therefore the answer must be **no**, Bob cannot
+distribute the dollars in his pockets so that each contains a different number
+of dollars.
+
+{% warning %}
+I found myself getting lost in the weeds here a bit, overcomplicating the
+problem because I miscounted the number of summands in $0 + 1 + \cdots + 8$.
+A humbling reminder to take my time and be sure of each step as I navigate a
+problem, even when (*especially* when) something feels easy.
+{% endwarning %}
 {% endaccordion %}
 
 {% accordion Second Pass %}
