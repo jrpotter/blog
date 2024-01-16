@@ -147,13 +147,6 @@ still "fits" the problem statement. Any other set of dollar amounts would
 produce a larger total. Therefore the answer must be **no**, Bob cannot
 distribute the dollars in his pockets so that each contains a different number
 of dollars.
-
-{% warning %}
-I found myself getting lost in the weeds here a bit, overcomplicating the
-problem because I miscounted the number of summands in $0 + 1 + \cdots + 8$.
-A humbling reminder to take my time and be sure of each step as I navigate a
-problem, even when (*especially* when) something feels easy.
-{% endwarning %}
 {% endaccordion %}
 
 {% accordion Second Pass %}
@@ -170,7 +163,20 @@ To number the pages of a bulky volume, the printer used $2989$ digits. How many
 pages has the volume?
 
 {% accordion First Pass %}
-_
+We first establish a lower bound. To do so, construct a table where each row
+keeps a running count of the total number of pages encountered so far.
+
+Radix   | Count                    | Cumulative
+------- | ------------------------ | ------------------
+$1$     | $9 - 1 + 1 = 9$          | $1 \times 9 = 9$
+$2$     | $99 - 10 + 1 = 90$       | $9 + 2 \times 90 = 189$
+$3$     | $999 - 100 + 1 = 900$    | $189 + 3 \times 900 = 2889$
+
+This means between pages $1$ to $999$ inclusive, we've used $2889$ digits to
+number our pages. Now we're only $100$ digits away from our goal. Since all
+subsequent pages consist of four digits, our final answer must be
+
+$$100 / 4 + 999 = \textbf{1024 pages}.$$
 {% endaccordion %}
 
 {% accordion Second Pass %}
