@@ -3,6 +3,9 @@
 # ========================================
 
 theme: jekyll-theme-chirpy
+
+theme_mode: light
+
 plugins:
   - jekyll-paginate-v2
 
