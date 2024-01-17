@@ -12,6 +12,19 @@ class Admonition < Liquid::Block
   end
 end
 
+class NoteBlock < Admonition
+  def internal_render
+  <<~ADMONITION
+    <div markdown="1" class="alert alert-secondary" role="alert">
+      <i class="fa fa-pencil"></i> **Note**
+      #{markdown_converter.convert(@text)}
+    </div>
+  ADMONITION
+  end
+end
+
+Liquid::Template.register_tag('note', NoteBlock)
+
 class InfoBlock < Admonition
   def internal_render
   <<~ADMONITION
