@@ -2,6 +2,7 @@
 title: Multi-Tenancy w/Phoenix
 tags: [c++, elixir, flume, phoenix, postgres]
 categories: devlog
+image: /assets/img/posters/multi-tenancy-phoenix.png
 ---
 
 The past week of development has been focused on supporting multi-tenancy in

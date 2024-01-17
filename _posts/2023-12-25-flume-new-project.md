@@ -2,6 +2,7 @@
 title: "Flume: New Project"
 tags: [c++, data-engineering, elixir, flume]
 categories: devlog
+image: /assets/img/posters/flume-new-project.png
 ---
 
 In an effort to write more often, I have decided to maintain a devlog for the

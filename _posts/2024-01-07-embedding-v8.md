@@ -2,6 +2,7 @@
 title: Embedding V8
 tags: [c++, cmake, flume, nix]
 categories: devlog
+image: /assets/img/posters/embedding-v8.png
 ---
 
 The Flume project diverted away from Elixir to C++ during this past week. In
