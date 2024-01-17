@@ -1,6 +1,6 @@
 ---
-title: Flume 0001
-tags: [c++, elixir]
+title: "Flume: New Project"
+tags: [c++, data-engineering, elixir, flume]
 categories: devlog
 ---
 
@@ -27,10 +27,10 @@ included:
 
 {% info %}
 These problems do not include the issues I felt our (at-the-time) dependency on
-[Supabase](/snapshots/flume-0001/supabase.html) introduced. In general, direct
-user-to-database communication is not a paradigm I agree with and the need to
-think about [RLS](/snapshots/flume-0001/rls.html) at every step of development
-was more trouble than it was worth.
+[Supabase](/snapshots/flume-new-project/supabase.html) introduced. In general,
+direct user-to-database communication is not a paradigm I agree with and the
+need to think about [RLS](/snapshots/flume-new-project/rls.html) at every step
+of development was more trouble than it was worth.
 {% endinfo %}
 
 Quite a bit can be written on each of the above points, but to distill down to
@@ -44,7 +44,7 @@ scale. This general thought process was the impetus behind
 As of now, very little has been done outside of more thinking around what
 exactly a first iteration should be. The rough idea consists of a basic
 interface for defining JavaScript/TypeScript functions capable of processing
-arbitrary data, running these functions in [V8](/snapshots/flume-0001/v8.html)
+arbitrary data, running these functions in [V8](/snapshots/flume-new-project/v8.html)
 isolates, and then sending successfully processed data to a pre-defined webhook.
 This likely doesn't sound all that novel, but there exists a lot of nuance
 around data processing. I'm hoping there is a particular unexplored facet to
