@@ -236,8 +236,9 @@ $$\\$2.332 \approx \\$167.90 / 72 \leq P \leq \\$967.99 / 72 \approx \\$13.444$$
 Next let's consider how we can reduce our search space. One optimization is that
 the last digit must be even (since $72$ is even). This reduces the possible
 number of pairs to check down to $45$. Now we revisit (2) - instead of looking
-at just one digit, can we look at the last two? Which of $90$, $92$, $94$, $96$,
-and $98$ could serve as a solution to $P \times 72 \bmod 100 \equiv x$?
+at just one digit, can we look at the last two? More specifically, which of
+$90$, $92$, $94$, $96$, and $98$ could serve as a solution to
+$P \times 72 \bmod 100 \equiv x$?
 
 ---
 
