@@ -38,7 +38,7 @@ a custom XComs backend or some 3P storage solution as an intermediary.
 
 ## Promises
 
-My experience using Airflow has been limited to just within a [dev environment](https://git.jrpotter.com/blog/example-airflow),
+My experience using Airflow has been limited to just within a [dev environment](https://git.jrpotter.com/blog/playground-airflow),
 but even a surface level experience can provide insights into the feasibility
 of a technology's promises. To continue, we should establish the promises that
 Airflow makes.
