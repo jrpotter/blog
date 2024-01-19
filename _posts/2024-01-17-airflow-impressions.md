@@ -2,10 +2,11 @@
 title: "Airflow: First Impressions"
 tags: [airflow, apache, python]
 categories: devlog
+image: /assets/img/posters/airflow-impressions.png
 ---
 
 In parallel to working on [Flume](https://git.jrpotter.com/flume), I have been
-performing a survey of the data engineering landscape. In the next few updates
+conducting a survey of the data engineering landscape. In the next few updates
 I'll touch briefly on some of the tools I've come across and my first
 impressions with them. In this post, I'll be talking about my experience with
 [Airflow](/snapshots/airflow-impressions/apache-airflow.html) (version 2.7.3).
