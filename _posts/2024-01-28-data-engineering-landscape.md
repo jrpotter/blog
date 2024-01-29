@@ -6,7 +6,7 @@ categories: devlog
 
 For the past few weeks I've been navigating the so-called "data engineering
 landscape." Most of my spare time has been spent either reading different books
-on data engineering as a whole, or experimenting with different tools often
+on data engineering as a whole or experimenting with different tools often
 used in the space.
 
 ## Fundamentals of Data Engineering
@@ -36,11 +36,11 @@ this space. These include:
 * [Pulsar](/snapshots/data-engineering-landscape/pulsar.html)
 * [Spark](/snapshots/data-engineering-landscape/spark.html)
 
-I've had a chance to experiment with [some of these](https://git.jrpotter.com/r/bootstrap/src/branch/main/specs)
+I've had a chance to experiment with [some of these](https://git.jrpotter.com/r/bootstrap/src/branch/main/specs),
 but even so I imagine any real evaluation I make would be cursory at best.
 Unless I have a specific reason to use any one of these tools, it'll likely
 remain that way. Still, having an even superficial understanding of what these
-tools do, has helped frame the space as a whole.
+tools do has helped frame the space as a whole.
 
 ## Database Studies
 
