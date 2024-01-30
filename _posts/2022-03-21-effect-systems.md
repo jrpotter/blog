@@ -17,7 +17,7 @@ A large portion of this post has been derived from the implementation of the
 chosen because it seems to have the most active development, the smallest
 dependency footprint, and minimal type machinery. In turn, this library was
 largely inspired by Nicolas Wu, Tom Schrijvers, and Ralf Hinze's work in
-[Effect Handlers in Scope](/snapshots/effect-systems/scope.pdf). As such, we'll
+[Effect Handlers in Scope](/assets/pdf/effect-systems/scope.pdf). As such, we'll
 discuss choice parts of this paper as well.
 
 Code snippets can be found in [this git repository](https://git.jrpotter.com/blog/effect-systems).
@@ -90,7 +90,7 @@ make an attempt on your behalf.
 
 {% tip %}
 Type variable `a` is said to be contravariant with respect to `Cons`. That is,
-`a` resides in a [negative position](/snapshots/effect-systems/covariance-contravariance.html)
+`a` resides in a [negative position](https://www.fpcomplete.com/blog/covariance-contravariance/)
 within `Cons`'s function.
 {% endtip %}
 
@@ -171,7 +171,7 @@ without much fanfare). That is, we are requiring type variable `f` to be a
 `Functor`! With this in mind, we can actually massage our first parameter into a
 bind-compatible one by simply omitting it altogether.
 
-To elaborate, it is [well known](/snapshots/effect-systems/functoriality.html)
+To elaborate, it is [well known](https://bartoszmilewski.com/2015/02/03/functoriality/)
 simple algebraic data types are isomorphic to "primitive" functors (`Identity`
 and `Const`) and that (co)products of functors yield more functors. We can
 therefore "absorb" the syntax of `a` *into* `f` by using a product type as a
@@ -582,7 +582,7 @@ threadedStateM'' = do
 
 This composition provides many benefits, but in certain situations we end up
 hitting a wall. To continue forward, we borrow an example from
-[Effect Handlers in Scope](/snapshots/effect-systems/scope.pdf). In particular,
+[Effect Handlers in Scope](/assets/pdf/effect-systems/scope.pdf). In particular,
 we discuss exception handling and how we can use a free monad to simulate
 throwing and catching exceptions.
 
@@ -1047,7 +1047,7 @@ workarounds, but these workarounds consist of just structuring these kind of
 effects differently.
 
 In general, modeling asynchronous or `IO`-oriented operations feel "unsolved"
-with solutions resorting to some [forklift](/snapshots/effect-systems/forklift.html)
+with solutions resorting to some [forklift](https://apfelmus.nfshost.com/blog/2012/06/07-forklift.html)
 strategy or other ad-hoc solutions that don't feel as cemented in literature. I
 don't necessarily think these are the *wrong* approach (I frankly don't know
 enough to have a real opinion here), but it'd be nice to feel there was some

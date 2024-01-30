@@ -6,8 +6,9 @@ image: /assets/img/posters/multi-tenancy-phoenix.png
 ---
 
 The past week of development has been focused on supporting multi-tenancy in
-[Phoenix](/snapshots/multi-tenancy-phoenix/phoenix.html). The goal was to
-include per-schema tenancy using the Postgres [Ecto](/snapshots/multi-tenancy-phoenix/ecto-postgres.html)
+[Phoenix](https://www.phoenixframework.org/). The goal was to include
+per-schema tenancy using the Postgres
+[Ecto](https://hexdocs.pm/ecto_sql/Ecto.Adapters.Postgres.html)
 adapter (schema here referring to database schemas, *not* Ecto schemas). This
 post will cover the main components implemented to support this functionality:
 
@@ -64,10 +65,10 @@ change ended up being difficult to figure out how to do correctly:
 
 ### Fixing Tests
 
-My initial attempt was to run the [Ecto.Migrator](/snapshots/multi-tenancy-phoenix/ecto-migrator.html)
-from within an [ExUnit](/snapshots/multi-tenancy-phoenix/exunit.html) `setup`
+My initial attempt was to run the [Ecto.Migrator](https://hexdocs.pm/ecto_sql/Ecto.Migrator.html)
+from within an [ExUnit](https://hexdocs.pm/ex_unit/main/ExUnit.html) `setup`
 call. Unfortunately, the `Ecto.Migrator` is incompatible with the
-[sandbox database adapter](/snapshots/multi-tenancy-phoenix/ecto-sandbox.html)
+[sandbox database adapter](https://hexdocs.pm/ecto_sql/Ecto.Adapters.SQL.Sandbox.html)
 typically used within Phoenix tests (the migrator requires two distinct database
 connections whereas the sandbox requires sharing a single connection). In
 response I tried forgoing tenancy from tests altogether, running
@@ -122,10 +123,10 @@ Mix.Task.run("ecto.migrate", [
 ```
 This approach served as just a temporary placeholder though. I still needed a
 mechanism to create migrations dynamically on account registration. Since `Mix`
-is not available from within an Elixir [release](/snapshots/multi-tenancy-phoenix/elixir-release.html)
+is not available from within an Elixir [release](https://hexdocs.pm/mix/1.12/Mix.Tasks.Release.html)
 (the mechanism I plan to deploy Flume with), an alternative approach needed to
-be found. Fortunately I stumbled across this [blog post](/snapshots/multi-tenancy-phoenix/tenancy.html)
-which introduced me to the concept of [dynamic repos](/snapshots/multi-tenancy-phoenix/dynamic-repo.html).
+be found. Fortunately I stumbled across this [blog post](https://underjord.io/ecto-multi-tenancy-prefixes-part-3.html)
+which introduced me to the concept of [dynamic repos](https://hexdocs.pm/ecto/replicas-and-dynamic-repositories.html).
 
 ### Dynamic Repos
 
@@ -202,7 +203,7 @@ Flume will never refer to schemas that do no have a `public.tenants` entry.
 
 ## Authentication
 
-Most of the authentication code was generated using the [phx.gen.auth](/snapshots/multi-tenancy-phoenix/gen-auth.html)
+Most of the authentication code was generated using the [phx.gen.auth](https://hexdocs.pm/phoenix/mix_phx_gen_auth.html)
 generator. Though nice to have all the authentication code directly accessible
 from within the application, migrating all the generated code to support
 multi-tenancy was a slow process. Two little tricks made me more confident in

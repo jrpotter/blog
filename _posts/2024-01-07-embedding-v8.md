@@ -7,7 +7,7 @@ image: /assets/img/posters/embedding-v8.png
 
 The Flume project diverted away from Elixir to C++ during this past week. In
 particular, I was focused on spinning up a small web server that exposes an
-[embedded V8](/snapshots/embedding-v8/v8-embed.html) instance using
+[embedded V8](https://v8.dev/docs/embed) instance using
 [Mongoose](https://github.com/cesanta/mongoose). The result is a small server
 capable of compiling and running arbitrary JavaScript. The next goal is to have
 the Elixir/Phoenix backend talking with this worker though the Mongoose-based
@@ -23,23 +23,25 @@ of the interesting pieces:
 ## CMake and Nix
 
 I have been using Nix for my package management needs the past few months. With
-[flakes](/snapshots/embedding-v8/flakes.html) and [nix develop](/snapshots/embedding-v8/nix-develop.html),
+[flakes](https://nixos.wiki/wiki/Flakes) and
+[nix develop](https://nixos.org/manual/nix/stable/command-ref/new-cli/nix3-develop.html),
 one can spin up a development environment containing all the build tools they
-need. This isn't anything new (this premise is what my [bootstrap](https://git.jrpotter.com/r/bootstrap)
-project leverages), but how [CMake's module system](/snapshots/embedding-v8/find-package.html)
+need. This isn't anything new (this premise is what my
+[bootstrap](https://git.jrpotter.com/r/bootstrap) project leverages), but how
+[CMake's module system](https://cmake.org/cmake/help/latest/command/find_package.html)
 interacts with Nix proved to be a pleasant surprise.
 
 Consider the problem of embedding V8. Two problems exist when working within a
 traditional environment:
 
 1. There doesn't exist an officially supported CMake module file.
-2. V8 actually uses a different build system generator called [gn](/snapshots/embedding-v8/build-gn.html).
+2. V8 actually uses a different build system generator called [gn](https://gn.googlesource.com/gn).
 
 This CMake-incompatibility has led to a few solutions, the most popular I could
 find being [v8-cmake](https://github.com/bnoordhuis/v8-cmake). I was not
 interested in pulling in an additional dependency just for the sake of embedding
-though. Fortunately the v8 derivation found in [nixpkgs](/snapshots/embedding-v8/v8-nix.html)
-provides a much cleaner solution - it exports a [pkg-config](/snapshots/embedding-v8/pkg-config-guide.html)
+though. Fortunately the v8 derivation found in [nixpkgs](https://github.com/NixOS/nixpkgs/blob/nixos-23.11/pkgs/development/libraries/v8/default.nix)
+provides a much cleaner solution - it exports a [pkg-config](https://people.freedesktop.org/~dbn/pkg-config-guide.html)
 file. With it, embedding V8 is powered by just two lines found in a custom
 `FindV8.cmake` file:
 ```cmake
@@ -55,7 +57,7 @@ the `PKG_CONFIG_PATH` environment variable.
 Because Mongoose is a C library and V8 is a C++ library, there were moments
 where I needed to interop between the two languages. Though I have encountered
 `extern "C"` and the like before, I hadn't sat down and understood what these
-two terms together were actually saying. This [language linkage](/snapshots/embedding-v8/language-linkage.html)
+two terms together were actually saying. This [language linkage](https://en.cppreference.com/w/cpp/language/language_linkage)
 doc helped clarify concepts in my head that I didn't realize were fuzzy.
 
 ## V8 Isolates
